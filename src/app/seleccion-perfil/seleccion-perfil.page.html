@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¿Quién eres?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let perfil of perfiles" [routerLink]="['/home']">
+          <center>
+            <ion-avatar style="width: 150px; height: 150px;"> 
+              <ion-img [src]="perfil.imageURL"></ion-img> 
+            </ion-avatar>
+            <ion-label>{{perfil.nombre}}</ion-label>
+          </center>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
