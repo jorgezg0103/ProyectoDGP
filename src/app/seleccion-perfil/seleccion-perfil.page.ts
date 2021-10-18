@@ -17,6 +17,16 @@ export class SeleccionPerfilPage implements OnInit {
       id: '2',
       nombre: 'Profesor',
       imageURL: 'https://cdn-icons-png.flaticon.com/512/2321/2321041.png',
+    },
+    {
+      id: '3',
+      nombre: 'Alumno2',
+      imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
+    },
+    {
+      id: '4',
+      nombre: 'Alumno3',
+      imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     }
   ]
 

@@ -10,10 +10,10 @@
       <ion-row>
         <ion-col *ngFor="let perfil of perfiles" [routerLink]="['/home']">
           <center>
-            <ion-avatar style="width: 150px; height: 150px;"> 
-              <ion-img [src]="perfil.imageURL"></ion-img> 
+            <ion-avatar> 
+              <ion-img [src]="perfil.imageURL" aria-labelledby="usuario"></ion-img> 
             </ion-avatar>
-            <ion-label>{{perfil.nombre}}</ion-label>
+            <ion-label id="usuario">{{perfil.nombre}}</ion-label>
           </center>
         </ion-col>
       </ion-row>

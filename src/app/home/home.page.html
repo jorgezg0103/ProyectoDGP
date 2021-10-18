@@ -1,19 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>
+          Inicio
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-content fullscreen>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Inicio</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    
+      <div id="container">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <ion-card>
+                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
+                  <ion-card-header>
+                    <ion-card-title>Menú</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+            </ion-col>
+            <ion-col>
+              
+              <ion-card>
+                <img src="https://library.kissclipart.com/20181007/jtw/kissclipart-webinars-icon-png-clipart-computer-icons-web-confe-680ac42975b629d6.png" />
+                <ion-card-header>
+                  <ion-card-title>Tutorial</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+    
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+            
+            <ion-col></ion-col>
+    
+            <ion-col size= "12">
+    
+              <ion-card>
+                <img src="https://thumbs.dreamstime.com/b/agenda-icon-vector-isolated-white-background-agenda-sign-agenda-icon-vector-isolated-white-background-agenda-transparent-125392198.jpg" style="height: 100px;"/>
+                <ion-card-header>
+                  <ion-card-title>Agenda</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+    
+            </ion-col>
+    
+            <ion-col></ion-col>
+    
+          </ion-row>
+    
+          <ion-row>
+            
+            <ion-col size="6">
+              <ion-card>
+                <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
+                <ion-card-header>
+                  <ion-card-title>Ayuda</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+    
+            <ion-col></ion-col>
+    
+          </ion-row>
+    
+        </ion-grid>
+      </div>
+    </ion-content>
 
-  <div id="container">
-    <strong>Esta sería la página de inicio de la app</strong>
-  </div>
-</ion-content>
+  </ion-app>
+</body>
+
+
+
+
