@@ -17,6 +17,18 @@ const routes: Routes = [
     path: 'seleccion-perfil',
     loadChildren: () => import('./seleccion-perfil/seleccion-perfil.module').then( m => m.SeleccionPerfilPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'tutoriales',
+    loadChildren: () => import('./tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+  },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
   
 ];
 
