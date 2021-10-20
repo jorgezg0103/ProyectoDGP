@@ -8,10 +8,10 @@
   <div class="container">
     <ion-grid>
       <ion-row>
-        <ion-col *ngFor="let perfil of perfiles" [routerLink]="['/home']">
+        <ion-col *ngFor="let perfil of perfiles" >
           <center>
             <ion-avatar> 
-              <ion-img [src]="perfil.imageURL" aria-labelledby="usuario"></ion-img> 
+              <ion-img [src]="perfil.imageURL" aria-labelledby="usuario" [routerLink]="perfil.home"></ion-img> 
             </ion-avatar>
             <ion-label id="usuario">{{perfil.nombre}}</ion-label>
           </center>

@@ -11,21 +11,29 @@ export class SeleccionPerfilPage implements OnInit {
     {
       id: '1',
       nombre: 'Alumno',
+      tipo: 'alumno',
+      home: '/alumno/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     },
     {
       id: '2',
       nombre: 'Profesor',
+      tipo: 'profesor',
+      home: '/profesor/home',
       imageURL: 'https://cdn-icons-png.flaticon.com/512/2321/2321041.png',
     },
     {
       id: '3',
       nombre: 'Alumno2',
+      tipo: 'alumno',
+      home: '/alumno/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     },
     {
       id: '4',
       nombre: 'Alumno3',
+      tipo: 'alumno',
+      home: '/alumno/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     }
   ]

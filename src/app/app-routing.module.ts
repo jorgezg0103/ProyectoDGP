@@ -14,8 +14,24 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'alumno/home',
+    loadChildren: () => import('./alumno/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'profesor/home',
+    loadChildren: () => import('./profesor/home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: 'seleccion-perfil',
     loadChildren: () => import('./seleccion-perfil/seleccion-perfil.module').then( m => m.SeleccionPerfilPageModule)
+  },
+  {
+    path: 'alumno/menu',
+    loadChildren: () => import('./alumno/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'profesor/menu',
+    loadChildren: () => import('./profesor/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
     path: 'menu',
