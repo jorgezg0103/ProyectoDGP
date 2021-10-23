@@ -61,7 +61,6 @@ const routes: Routes = [
     path: 'alumno/vista_compleja/tutoriales',
     loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
-
   {
     path: 'profesor/home',
     loadChildren: () => import('./profesor/home/home.module').then( m => m.HomePageModule)
