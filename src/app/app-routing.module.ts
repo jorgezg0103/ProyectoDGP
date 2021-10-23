@@ -14,20 +14,52 @@ const routes: Routes = [
     loadChildren: () => import('./seleccion-perfil/seleccion-perfil.module').then( m => m.SeleccionPerfilPageModule)
   },
   {
-    path: 'alumno/home',
-    loadChildren: () => import('./alumno/home/home.module').then( m => m.HomePageModule)
+    path: 'alumno/vista_basica/home',
+    loadChildren: () => import('./alumno/vista_basica/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'alumno/menu',
-    loadChildren: () => import('./alumno/menu/menu.module').then( m => m.MenuPageModule)
+    path: 'alumno/vista_media/home',
+    loadChildren: () => import('./alumno/vista_media/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'alumno/agenda',
-    loadChildren: () => import('./alumno/agenda/agenda.module').then( m => m.AgendaPageModule)
+    path: 'alumno/vista_compleja/home',
+    loadChildren: () => import('./alumno/vista_compleja/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'alumno/tutoriales',
-    loadChildren: () => import('./alumno/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+    path: 'alumno/vista_basica/menu',
+    loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'alumno/vista_media/menu',
+    loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'alumno/vista_media/menu',
+    loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'alumno/vista_basica/agenda',
+    loadChildren: () => import('./alumno/vista_basica/agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
+  {
+    path: 'alumno/vista_media/agenda',
+    loadChildren: () => import('./alumno/vista_basica/agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
+  {
+    path: 'alumno/vista_compleja/agenda',
+    loadChildren: () => import('./alumno/vista_basica/agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
+  {
+    path: 'alumno/vista_basica/tutoriales',
+    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+  },
+  {
+    path: 'alumno/vista_media/tutoriales',
+    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+  },
+  {
+    path: 'alumno/vista_compleja/tutoriales',
+    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
 
   {

@@ -10,9 +10,9 @@ export class SeleccionPerfilPage implements OnInit {
   private perfiles = [
     {
       id: '1',
-      nombre: 'Alumno',
+      nombre: 'Alumno Vista Basica',
       tipo: 'alumno',
-      home: '/alumno/home',
+      home: '/alumno/vista_basica/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     },
     {
@@ -24,16 +24,16 @@ export class SeleccionPerfilPage implements OnInit {
     },
     {
       id: '3',
-      nombre: 'Alumno2',
+      nombre: 'Alumno Vista Media',
       tipo: 'alumno',
-      home: '/alumno/home',
+      home: '/alumno/vista_media/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     },
     {
       id: '4',
-      nombre: 'Alumno3',
+      nombre: 'Alumno Vista Compleja',
       tipo: 'alumno',
-      home: '/alumno/home',
+      home: '/alumno/vista_compleja/home',
       imageURL: 'https://image.flaticon.com/icons/png/512/257/257651.png',
     }
   ]
