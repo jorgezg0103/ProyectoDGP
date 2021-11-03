@@ -34,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
-    path: 'alumno/vista_media/menu',
+    path: 'alumno/vista_compleja/menu',
     loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
   },
   {

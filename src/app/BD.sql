@@ -121,11 +121,18 @@ CREATE TABLE alergia(
 );
 
 CREATE TABLE plato(
-
+    idPlato INTEGER PRIMARY KEY,
+    nombre VARCHAR2,
+    descripcion TEXT
 );
 
 CREATE TABLE tiene(
-
+    menu INTEGER,
+    plato INTEGER,
+    
+    PRIMARY KEY (menu,plato),
+    FOREIGN KEY (menu) REFERENCES menu(idMenu),
+    FOREIGN KEY (plato) REFERENCES plato (idPlato)
 );
 
 
