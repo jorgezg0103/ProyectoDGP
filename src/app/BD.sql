@@ -47,7 +47,13 @@ CREATE TABLE tarea (
 );
 
 CREATE TABLE responsable(
+    user VARCHAR2,
+    idTarea INTEGER,
+    fecha DATE,
 
+    PRIMARY KEY (user, fecha)
+    FOREIGN KEY user REFERENCES alumno (user),
+    FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
 
 CREATE TABLE tutoriales (
@@ -64,7 +70,9 @@ CREATE TABLE explica (
 );
 
 CREATE TABLE inventario(
+    idTarea PRIMARY KEY,
 
+    FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
 
 CREATE TABLE solicita(
@@ -72,26 +80,43 @@ CREATE TABLE solicita(
 );
 
 CREATE TABLE comedor(
+    idTarea PRIMARY KEY,
 
+    FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
 
 CREATE TABLE externas(
+    idTarea PRIMARY KEY,
+    ubicacion VARCHAR2,
 
+    FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
 
 CREATE TABLE menu(
-
+    idMenu INTEGER PRIMARY KEY,
+    primerPlato 
+    segundoPlato
+    postre
 );
 
 CREATE TABLE alergenos(
-
+    tipo VARCHAR2 PRIMARY KEY
 );
 
 CREATE TABLE contiene(
+    menu INTEGER,
+    alergeno VARCHAR2,
 
+    PRIMARY KEY (menu, alergeno),
+    FOREIGN KEY (menu) REFERENCES menu(idMenu) 
+    FOREIGN KEY (alergeno) REFERENCES alergenos (tipo)
 );
 
 CREATE TABLE alergia(
+    alumno VARCHAR2,
+    alergeno VARCHAR2,
+
+    PRIMARY KEY (alumno, alergeno)
 
 );
 
