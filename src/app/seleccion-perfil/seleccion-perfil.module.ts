@@ -8,12 +8,16 @@ import { SeleccionPerfilPageRoutingModule } from './seleccion-perfil-routing.mod
 
 import { SeleccionPerfilPage } from './seleccion-perfil.page';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SeleccionPerfilPageRoutingModule
+    SeleccionPerfilPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [SeleccionPerfilPage]
 })

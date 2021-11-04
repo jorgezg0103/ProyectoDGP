@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeleccionPerfilPage implements OnInit {
 
+  pagina_actual: number = 1;
+
   private perfiles = [
     {
       id: '1',

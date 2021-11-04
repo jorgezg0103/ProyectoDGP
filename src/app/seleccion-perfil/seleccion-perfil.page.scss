@@ -1,6 +1,17 @@
 
 ion-avatar{
-    width: 150px; 
-    height: 150px;
+    width: 100px; 
+    height: 100px;
+}
+
+ion-content {
+    --overflow: hidden;
+    
+}
+
+.prueba{
+    position: fixed;
+    bottom: 0;
+    font-size: 80px;
 }
 
