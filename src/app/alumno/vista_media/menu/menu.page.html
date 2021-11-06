@@ -1,74 +1,98 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Menú Alumno</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú Alumno Vista Media</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content>
-  <div id="container">
-    <ion-grid>
-      <ion-row>
+    <ion-content fullscreen>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Inicio</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Primer plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
 
-      </ion-row>
+      <div id="container">
+        <ion-grid>
 
-      <ion-row>
-        
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Segundo plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
 
-      </ion-row>
+          <!-- Fila con 1 y 2 plato-->
+          <ion-row>
 
-      <ion-row>
-        
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Tercer plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
+            <ion-col>
+                <ion-card>
+                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
+                  <ion-card-header>
+                    <ion-card-title>Primer plato</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+            </ion-col>
 
-      </ion-row>
 
-      <!-- Fila con Ayuda y botón de Inicio -->
-      <ion-row>
+            <ion-col>
+              <ion-card>
+                <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
+                <ion-card-header>
+                  <ion-card-title>Segundo plato</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
 
-        <ion-col size="6">
-          <ion-card>
-            <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
-            <ion-card-header>
-              <ion-card-title>Ayuda</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
+          </ion-row>
 
-        <ion-col>
-          <ion-card [routerLink]="['../home']">
-            <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
-            <ion-card-header>
-              <ion-card-title>Inicio</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
 
-      </ion-row>
+          <!-- Fila con el postre -->
+          <ion-row>
+            
+            <ion-col>
+                <ion-card>
+                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
+                  <ion-card-header>
+                    <ion-card-title>Tercer plato</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+            </ion-col>
 
-    </ion-grid>
-  </div>
-</ion-content>
+          </ion-row>
+
+          <!-- Fila con Ayuda y botón de Inicio -->
+          <ion-row>
+
+            <ion-col size="6">
+              <ion-card>
+                <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
+                <ion-card-header>
+                  <ion-card-title>Ayuda</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card [routerLink]="['../home']">
+                <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
+                <ion-card-header>
+                  <ion-card-title>Inicio</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+
+          </ion-row>
+
+          <!-- Aquí se pone el control del paginación -->
+          <div class="paginacion">
+            <pagination-controls 
+              (pageChange)="pagina_actual = $event" 
+              previousLabel="" 
+              nextLabel="" 
+              maxSize=""
+            ></pagination-controls>
+          </div>
+    
+
+        </ion-grid>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
