@@ -9,12 +9,12 @@
     <ion-grid>
       <ion-row>
         <ion-col *ngFor="let perfil of perfiles | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
-          <center>
+          
             <ion-avatar> 
               <ion-img [src]="perfil.imageURL" aria-labelledby="usuario" [routerLink]="perfil.home"></ion-img> 
             </ion-avatar>
             <ion-label id="usuario">{{perfil.nombre}}</ion-label>
-          </center>
+          
         </ion-col>
       </ion-row>
       <!-- Aquí se pone el control del paginación -->
