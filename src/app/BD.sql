@@ -51,7 +51,7 @@ CREATE TABLE responsable(
     idTarea INTEGER,
     fecha DATE,
 
-    PRIMARY KEY (user, fecha)
+    PRIMARY KEY (idTarea, fecha)
     FOREIGN KEY user REFERENCES alumno (user),
     FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
