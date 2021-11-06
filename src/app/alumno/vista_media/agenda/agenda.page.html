@@ -9,33 +9,21 @@
     
     <ion-grid>
 
-      <ion-row>
+      <ion-row *ngFor="let tarea of tareas | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
+          
         <ion-col>
           
           <ion-card>
                             
-            <img src="../../../../assets/microwave.png" />
+            <ion-img [src]="tarea.imageURL"></ion-img> 
             <ion-card-header>
-              <ion-card-title>Poner el microondas</ion-card-title>
+              <ion-card-title>{{tarea.nombre}}</ion-card-title>
             </ion-card-header>
 
           </ion-card>
 
         </ion-col>
-      </ion-row>
       
-      <ion-row>
-        <ion-col>
-
-        <ion-card [routerLink]="['../menu']">
-          <img src = "https://icon-library.com/images/icon-plus/icon-plus-28.jpg"/>
-            <ion-card-header>
-              <ion-card-title>Tomar comanda comedor</ion-card-title>
-            </ion-card-header>
-
-        </ion-card>
-
-        </ion-col>
       </ion-row>
       
       <!-- Fila con Ayuda y botón de Inicio -->
