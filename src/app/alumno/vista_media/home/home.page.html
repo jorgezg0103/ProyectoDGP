@@ -19,8 +19,9 @@
         <ion-grid>
 
           <!-- Fila con menu y tutoriales  -->
-          <ion-row>
-            <ion-col>
+          <ion-row size ="6">
+
+            <ion-col size="6">
                 <ion-card [routerLink]="['../menu']">
                   <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
                   <ion-card-header>
@@ -28,24 +29,24 @@
                   </ion-card-header>
                 </ion-card>
             </ion-col>
-            <ion-col>
-              
+
+            <ion-col size = "6">
               <ion-card [routerLink]="['../tutoriales']">
                 <img src="https://library.kissclipart.com/20181007/jtw/kissclipart-webinars-icon-png-clipart-computer-icons-web-confe-680ac42975b629d6.png" />
                 <ion-card-header>
                   <ion-card-title>Tutorial</ion-card-title>
                 </ion-card-header>
               </ion-card>
-    
             </ion-col>
+
           </ion-row>
           
           <!-- Fila con agenda  -->
-          <ion-row>
+          <ion-row size="6">
             
             <ion-col></ion-col>
     
-            <ion-col size= "12">
+            <ion-col size= "6">
     
               <ion-card [routerLink]="['../agenda']">
                 <img src="https://thumbs.dreamstime.com/b/agenda-icon-vector-isolated-white-background-agenda-sign-agenda-icon-vector-isolated-white-background-agenda-transparent-125392198.jpg" style="height: 100px;"/>
@@ -61,7 +62,7 @@
           </ion-row>
     
           <!-- Fila con Ayuda  -->
-          <ion-row>
+          <ion-row size = "6">
             
             <ion-col size="6">
               <ion-card>

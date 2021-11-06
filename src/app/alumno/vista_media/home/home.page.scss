@@ -31,3 +31,21 @@ img{
 // ion-row{
 //   margin-bottom: -5%; 
 // }
+
+ion-title {
+  font-size: 25px;
+}
+
+ion-content {
+  --overflow: hidden;
+  
+}
+
+.paginacion{
+  position: fixed;
+  bottom: 0;
+  font-size: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
