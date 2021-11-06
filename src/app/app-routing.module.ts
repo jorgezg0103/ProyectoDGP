@@ -31,11 +31,11 @@ const routes: Routes = [
   },
   {
     path: 'alumno/vista_media/menu',
-    loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./alumno/vista_media/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
     path: 'alumno/vista_compleja/menu',
-    loadChildren: () => import('./alumno/vista_basica/menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./alumno/vista_compleja/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
     path: 'alumno/vista_basica/agenda',
@@ -55,11 +55,11 @@ const routes: Routes = [
   },
   {
     path: 'alumno/vista_media/tutoriales',
-    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+    loadChildren: () => import('./alumno/vista_media/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
   {
     path: 'alumno/vista_compleja/tutoriales',
-    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+    loadChildren: () => import('./alumno/vista_compleja/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
   {
     path: 'profesor/home',
