@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: 'alumno/vista_media/agenda',
-    loadChildren: () => import('./alumno/vista_basica/agenda/agenda.module').then( m => m.AgendaPageModule)
+    loadChildren: () => import('./alumno/vista_media/agenda/agenda.module').then( m => m.AgendaPageModule)
   },
   {
     path: 'alumno/vista_compleja/agenda',
