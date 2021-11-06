@@ -16,9 +16,7 @@
           <ion-card>
                             
             <ion-img [src]="tarea.imageURL"></ion-img> 
-            <ion-card-header>
-              <ion-card-title>{{tarea.nombre}}</ion-card-title>
-            </ion-card-header>
+            <div class="nombreTarea">{{tarea.nombre}}</div>
 
           </ion-card>
 
@@ -48,6 +46,16 @@
         </ion-col>
       
       </ion-row>
+        
+      <!-- Aquí se pone el control del paginación -->
+      <div class="paginacion">
+        <pagination-controls 
+          (pageChange)="pagina_actual = $event" 
+          previousLabel="" 
+          nextLabel="" 
+          maxSize=""
+        ></pagination-controls>
+      </div>
         
     </ion-grid>
     

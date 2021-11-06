@@ -1,13 +1,29 @@
 ion-img{
     height: 50px;
     width: 50px;
+    float: left;
   }
   
   ion-card-title{
     font-size: 15px;
+    text-align: center;
   }
   
   ion-title {
     font-size: 25px;
   }
   
+  .nombreTarea{
+    font-size: 15px;
+    color: black;
+    display: inline-block;
+    padding: 5%;
+  }
+
+  .paginacion{
+    margin-left: 109px;
+  }
+
+  ngx-pagination{
+    float: left;
+  }
