@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TutorialesPageRoutingModule } from './tutoriales-routing.module';
 
 import { TutorialesPage } from './tutoriales.page';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TutorialesPageRoutingModule
+    TutorialesPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [TutorialesPage]
 })
