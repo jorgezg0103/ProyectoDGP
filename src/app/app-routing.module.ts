@@ -74,6 +74,10 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/agenda/agenda.module').then( m => m.AgendaPageModule)
   },
   {
+    path: 'profesor/opciones',
+    loadChildren: () => import('./profesor/opciones/opciones.module').then( m => m.OpcionesPageModule)
+  },
+  {
     path: 'profesor/tutoriales',
     loadChildren: () => import('./profesor/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
