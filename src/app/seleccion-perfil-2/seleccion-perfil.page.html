@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¿Quién eres?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let perfil of perfiles | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
+          
+            <ion-avatar> 
+              <ion-img [src]="perfil.imageURL" aria-labelledby="usuario" [routerLink]="perfil.home"></ion-img> 
+            </ion-avatar>
+            <ion-label id="usuario">{{perfil.nombre}}</ion-label>
+          
+        </ion-col>
+      </ion-row>
+      <!-- Aquí se pone el control del paginación -->
+      <div class="paginacion">
+        <pagination-controls 
+          (pageChange)="pagina_actual = $event" 
+          previousLabel="" 
+          nextLabel="" 
+          maxSize=""
+        ></pagination-controls>
+      </div>
+    </ion-grid>
+  </div>
+</ion-content>  
