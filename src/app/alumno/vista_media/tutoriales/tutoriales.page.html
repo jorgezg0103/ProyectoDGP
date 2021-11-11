@@ -10,7 +10,7 @@
 
     <!-- Se insertan los tutoriales -->
     <ion-row>
-      <ion-col *ngFor="let tutorial of tutoriales">
+      <ion-col *ngFor="let tutorial of tutoriales | paginate: { itemsPerPage: 4, currentPage: pagina_actual }">
           <ion-card>
             <ion-card-title>{{tutorial.nombre}}</ion-card-title>
             <ion-card-content>{{tutorial.descripcion}}</ion-card-content>
@@ -38,9 +38,10 @@
           </ion-card-header>
         </ion-card>
       </ion-col>
+    </ion-row>
       
       <!-- Aquí se pone el control del paginación -->
-      <div class="paginacion">
+    <div class="paginacion">
         <pagination-controls 
           (pageChange)="pagina_actual = $event" 
           previousLabel="" 
@@ -48,8 +49,6 @@
           maxSize=""
         ></pagination-controls>
       </div>
-
-    </ion-row>
 
   </ion-grid>
   </div>

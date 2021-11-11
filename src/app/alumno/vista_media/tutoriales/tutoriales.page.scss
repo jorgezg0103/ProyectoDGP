@@ -42,13 +42,10 @@
     --overflow: hidden;
     
   }
- 
-  .paginacion{
-    margin-left: 109px;
-  }
-
-  ngx-pagination{
-    float: left;
-  }
 
   
+  .paginacion{
+    position: fixed;
+    font-size: 50px;
+    bottom: 0;
+  }
