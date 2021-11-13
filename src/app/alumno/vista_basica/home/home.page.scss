@@ -25,9 +25,25 @@
 }
 
 img{
-  height: 100px;
+  height: 50px;
+  width: 50px;
+}
+
+ion-card-title{
+  font-size: 15px;
 }
 
 // ion-row{
 //   margin-bottom: -5%; 
 // }
+
+ion-title {
+  font-size: 25px;
+}
+
+ion-content {
+  --overflow: hidden;
+  
+}
+
+
