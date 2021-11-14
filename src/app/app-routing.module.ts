@@ -8,7 +8,6 @@ const routes: Routes = [
     redirectTo: 'seleccion-perfil',
     pathMatch: 'full'
   },
-
   {
     path: 'seleccion-perfil',
     loadChildren: () => import('./seleccion-perfil/seleccion-perfil.module').then( m => m.SeleccionPerfilPageModule)
