@@ -61,6 +61,11 @@ const routes: Routes = [
     loadChildren: () => import('./alumno/vista_compleja/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
   {
+    path: 'profesor/',
+    redirectTo: 'profesor/home',
+    pathMatch: 'full'
+  },
+  {
     path: 'profesor/inicio',
     loadChildren: () => import('./profesor/inicio/inicio.module').then( m => m.InicioPageModule)
   },

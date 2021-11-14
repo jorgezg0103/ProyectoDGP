@@ -40,3 +40,7 @@
   ion-title {
     font-size: 25px;
   }
+
+  ion-content {
+    --overflow: show;
+  }
