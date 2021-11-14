@@ -18,7 +18,8 @@ describe('AgendaPage', () => {
     fixture.detectChanges();
   }));
 
+  /*
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });*/
 });

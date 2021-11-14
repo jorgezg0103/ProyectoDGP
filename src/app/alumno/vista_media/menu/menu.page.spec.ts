@@ -1,24 +1,49 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { By } from '@angular/platform-browser';
+import { Location, CommonModule } from '@angular/common';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
 
-import { MenuPage } from './menu.page';
+@Component({
+  template: `
+    <a routerLink="/alumno/vista_media/home">link</a>
+    <router-outlet></router-outlet>
+  `
+})
+class TestComponent {
+  collName = 'testing';
+}
 
-describe('MenuPage', () => {
-  let component: MenuPage;
-  let fixture: ComponentFixture<MenuPage>;
+@Component({
+  template: ''
+})
+class DummyComponent {
+}
 
-  beforeEach(waitForAsync(() => {
+describe('Pruebas de la pantalla de Menu de Alumno Vista Media', function () {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuPage ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(MenuPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+      imports: [
+        CommonModule,
+        RouterTestingModule.withRoutes([
+         { path: 'alumno/vista_media/home', component: DummyComponent }
+        ])
+      ],
+      declarations: [ TestComponent, DummyComponent ]
+    });
   });
+
+  it('Desde la pantalla de menu de Alumno Vista Media se puede volver al Home',
+    async(inject([Router, Location], (router: Router, location: Location) => {
+
+    let fixture = TestBed.createComponent(TestComponent);
+    fixture.detectChanges();
+
+    fixture.debugElement.query(By.css('a')).nativeElement.click();
+    fixture.whenStable().then(() => {
+      expect(location.path()).toEqual('/alumno/vista_media/home');
+      console.log('after expect');
+    });
+  })));
 });

@@ -8,12 +8,18 @@ import { AgendaPageRoutingModule } from './agenda-routing.module';
 
 import { AgendaPage } from './agenda.page';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { RouterTestingModule } from '@angular/router/testing';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgendaPageRoutingModule
+    AgendaPageRoutingModule,
+    NgxPaginationModule,
+    RouterTestingModule
   ],
   declarations: [AgendaPage]
 })
