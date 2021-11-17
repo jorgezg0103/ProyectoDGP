@@ -1,6 +1,7 @@
 //Nombre de archivo:home.module.ts
 //Fichero encargado de agrupar todos los modulos utilizados en la página
 //Autor: Alejandro Soriano Morante
+//Autor: Jesús López Rodríguez
 //Define una  agrupacion de todos los modulos a usar
 
 import { NgModule } from '@angular/core';

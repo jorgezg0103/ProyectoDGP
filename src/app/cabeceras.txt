@@ -7,7 +7,7 @@
 *file.module.ts*
 //Nombre de archivo:*.module.ts
 //Fichero encargado de agrupar todos los modulos utilizados en la página
-//Autor: Jesús López Rodríguez
+//Autor: *
 //Define una  agrupacion de todos los modulos a usar
 
 *file.page.html*
