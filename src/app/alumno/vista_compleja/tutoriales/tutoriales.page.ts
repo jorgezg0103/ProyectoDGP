@@ -27,6 +27,31 @@ export class TutorialesPage implements OnInit {
       id: '4',
       nombre: 'T4',
       descripcion: 'Aqui va el tutorial 4',
+    },
+    {
+      id: '5',
+      nombre: 'T5',
+      descripcion: 'Aqui va el tutorial 5',
+    },
+    {
+      id: '6',
+      nombre: 'T6',
+      descripcion: 'Aqui va el tutorial 6',
+    },
+    {
+      id: '7',
+      nombre: 'T7',
+      descripcion: 'Aqui va el tutorial 7',
+    },
+    {
+      id: '8',
+      nombre: 'T8',
+      descripcion: 'Aqui va el tutorial 8',
+    },
+    {
+      id: '9',
+      nombre: 'T9',
+      descripcion: 'Aqui va el tutorial 9',
     }
   ]
 

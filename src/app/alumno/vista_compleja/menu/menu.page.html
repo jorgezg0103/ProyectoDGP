@@ -1,74 +1,73 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Menú Alumno</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--Nombre del archivo: menu.page.html-->
+<!--Fichero para la creacion del apartado menu de la vista Alumno Compleja-->
+<!--Autor: Jorge Zamudio Gutierrez-->
+<!--Define la estructura de la página de menu-->
 
-<ion-content>
-  <div id="container">
-    <ion-grid>
-      <ion-row>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú Vista Alumno Media</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Primer plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
+    <ion-content fullscreen>
 
-      </ion-row>
+      <div id="container">
+        <ion-grid>
+          <!-- Fila con 1 y 2 plato-->
+          <ion-row>
+            <ion-col>
+                <ion-card>
+                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" class="imagenPlato"/>
+                  <div class="nombrePlato">Primer plato</div>
+                </ion-card>
+            </ion-col>
+          </ion-row>
 
-      <ion-row>
-        
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Segundo plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
+          <ion-row>
+            <ion-col>
+              <ion-card>
+                <img src="https://image.flaticon.com/icons/png/512/857/857681.png" class="imagenPlato"/>
+                <div class="nombrePlato">Segundo plato</div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
 
-      </ion-row>
+          <!-- Fila con el postre -->
+          <ion-row>        
+            <ion-col>
+                <ion-card>
+                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" class="imagenPlato"/>
+                  <div class="nombrePlato">Tercer plato</div>
+                </ion-card>
+            </ion-col>
+          </ion-row>
 
-      <ion-row>
-        
-        <ion-col>
-            <ion-card>
-              <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-              <ion-card-header>
-                <ion-card-title>Tercer plato</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-col>
+          <!-- Fila con Ayuda y botón de Inicio -->
+          <ion-row>
+            <ion-col size="6">
+              <ion-card>
+                <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
+                <ion-card-header>
+                  <ion-card-title>Ayuda</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+            <ion-col>
+              <ion-card [routerLink]="['../home']">
+                <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
+                <ion-card-header>
+                  <ion-card-title>Inicio</ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          </ion-row>
 
-      </ion-row>
+    
 
-      <!-- Fila con Ayuda y botón de Inicio -->
-      <ion-row>
-
-        <ion-col size="6">
-          <ion-card>
-            <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
-            <ion-card-header>
-              <ion-card-title>Ayuda</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card [routerLink]="['../home']">
-            <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
-            <ion-card-header>
-              <ion-card-title>Inicio</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-
-      </ion-row>
-
-    </ion-grid>
-  </div>
-</ion-content>
+        </ion-grid>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>

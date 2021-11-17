@@ -1,3 +1,62 @@
-img{
-    height: 70px;
-}
+//Nombre de archivo:menu.page.scss
+//Fichero encargado del estilo del menu
+//Autor: Jorge Zamudio Gutierrez
+//Define el estilo del apartado menu
+
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  #container strong {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  #container p {
+    font-size: 10px;
+    line-height: 16px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  img{
+    height: 50px;
+    width: 50px;
+  }
+  
+  ion-card-title{
+    font-size: 15px;
+  }
+  
+  
+  ion-title {
+    font-size: 20px;
+  }
+  
+  ion-content {
+    --overflow: hidden;
+    
+  }
+
+  ion-img{
+    height: 50px;
+    width: 50px;
+    float: left;
+  }
+  
+  .nombrePlato{
+    font-size: 15px;
+    color: black;
+    display: inline-block;
+    padding: 5%;
+  }
