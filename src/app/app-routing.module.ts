@@ -8,6 +8,7 @@ const routes: Routes = [
     redirectTo: 'seleccion-perfil',
     pathMatch: 'full'
   },
+  
   {
     path: 'seleccion-perfil',
     loadChildren: () => import('./seleccion-perfil/seleccion-perfil.module').then( m => m.SeleccionPerfilPageModule)
@@ -90,7 +91,7 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
 
-  
+
 ];
 
 @NgModule({
