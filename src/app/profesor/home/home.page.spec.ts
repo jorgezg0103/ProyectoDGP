@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { Location, CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed, inject, async } from '@angular/core/testing';
+=======
+//Nombre de archivo:home.page.spec.ts
+//Fichero encargado de creación de las opciones de routing de la página web
+//Autor: Alejandro Soriano Morante
+//Autor: Jesús López Rodríguez
+//Define una función para la creación de las diversas opciones de routing
+
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+>>>>>>> master
 
 @Component({
   template: `

@@ -10,16 +10,23 @@ import { AgendaPage } from './agenda.page';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
+<<<<<<< HEAD
 import { RouterTestingModule } from '@angular/router/testing';
 
+=======
+>>>>>>> master
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     AgendaPageRoutingModule,
+<<<<<<< HEAD
     NgxPaginationModule,
     RouterTestingModule
+=======
+    NgxPaginationModule
+>>>>>>> master
   ],
   declarations: [AgendaPage]
 })

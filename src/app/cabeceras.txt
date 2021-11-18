@@ -1,0 +1,35 @@
+*file-routing.modules.ts*
+//Nombre de archivo:*-routing.module.ts
+//Fichero encargado de ayudar al fichero de routing principal de la aplicación
+//Autor: *
+//Define una variable para la ruta de la página y un módulo importando y exportando las rutas utilizadas
+
+*file.module.ts*
+//Nombre de archivo:*.module.ts
+//Fichero encargado de agrupar todos los modulos utilizados en la página
+//Autor: *
+//Define una  agrupacion de todos los modulos a usar
+
+*file.page.html*
+<!--Nombre del archivo: *.page.html-->
+<!--Fichero encargado de la creación de la página web para que el alumno pueda ver su página de inicio-->
+<!--Autor: *-->
+<!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al alumno la página de inicio-->
+
+*file.page.scss*
+//Nombre de archivo:*.page.scss
+//Fichero encargado del estilo de la página web
+//Autor: *
+//Define el estilo de los distintos contenidos de la página web
+
+*file.page.spec.ts*
+//Nombre de archivo: *.page.spec.ts
+//Fichero encargado de creación de las opciones de routing de la página web
+//Autor: *
+//Define una función para la creación de las diversas opciones de routing
+
+*file.page.ts*
+//Nombre de archivo:*.page.ts
+//Fichero encargado de dirigir el routing hacia la página principal o al fichero de estilo
+//Autor: *
+//Define el modulo de los principales componentes de la página web
