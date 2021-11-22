@@ -9,8 +9,8 @@
    <body>
       <?php
          $dbhost = 'remotemysql.com:3306';
-         $dbuser = 'helloworlddgp@gmail.com';
-         $dbpass = 'dgphelloworld';
+         $dbuser = 'AVzOphS8yY';
+         $dbpass = 'BJojxLnXQN';
          $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
          
         
