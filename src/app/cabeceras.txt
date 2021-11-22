@@ -33,3 +33,9 @@
 //Fichero encargado de dirigir el routing hacia la página principal o al fichero de estilo
 //Autor: *
 //Define el modulo de los principales componentes de la página web
+
+*file.sql*
+--Nombre de archivo: *.sql
+--Fichero encargado de crear las tablas de la base de datos
+--Autor: *
+--Define el scrip sql encargado de crear las tablas pertinentes

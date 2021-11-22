@@ -1,3 +1,8 @@
+--Nombre de archivo: BD.sql
+--Fichero encargado de crear las tablas de la base de datos
+--Autor: Jesús López Rodríguez
+--Define el scrip sql encargado de crear las tablas pertinentes
+
 CREATE TABLE tutor_legal(
     dni VARCHAR2(10) PRIMARY KEY,
     nombre VARCHAR2(20),

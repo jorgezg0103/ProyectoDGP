@@ -1,0 +1,4 @@
+--Nombre de archivo: DROP.sql
+--Fichero encargado de borrar las tablas de la base de datos
+--Autor: Jesús López Rodríguez
+--Define el scrip sql encargado de borrar las tablas pertinentes
