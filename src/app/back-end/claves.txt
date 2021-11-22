@@ -1,3 +1,7 @@
+Nombre de archivo: claves.txt
+Fichero encargado de almacenar las claves del servidor mysql
+Autor: Jesús López Rodríguez
+
 link: remotemysql.com
 usuario: helloworlddgp@gmail.com 
 contraseña: dgphelloworld

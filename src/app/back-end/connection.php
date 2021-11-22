@@ -1,3 +1,7 @@
+<!--Nombre del archivo: connection.php-->
+<!--Fichero encargado de comprobar la conexion con la BD-->
+<!--Autor: Jesús López Rodríguez-->
+<!--Se definen las funciones necesarias en php-->
 <html>
    <head>
       <title>Connecting MySQL Server</title>

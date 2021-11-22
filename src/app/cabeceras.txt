@@ -1,3 +1,8 @@
+Nombre de archivo: cabeceras.txt
+Fichero encargado de tener las distintas cabeceras que se deben insertar según el tipo de fichero
+Autor: Jesús López Rodríguez
+Define los distintos tipos de archivos y comentarios
+
 *file-routing.modules.ts*
 //Nombre de archivo:*-routing.module.ts
 //Fichero encargado de ayudar al fichero de routing principal de la aplicación
