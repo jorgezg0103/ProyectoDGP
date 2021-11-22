@@ -1,2 +1,6 @@
+link: remotemysql.com
+usuario: helloworlddgp@gmail.com 
+contraseña: dgphelloworld
+
 base de datos: AVzOphS8yY
 contraseña: BJojxLnXQN
