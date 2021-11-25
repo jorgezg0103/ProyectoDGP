@@ -14,14 +14,16 @@
   <ion-grid>
 
     <!-- Se insertan los tutoriales -->
-    <ion-row>
-      <ion-col *ngFor="let tutorial of tutoriales | paginate: { itemsPerPage: 4, currentPage: pagina_actual }">
+    
+      <ion-row *ngFor="let tutorial of tutoriales | paginate: { itemsPerPage: 4, currentPage: pagina_actual }">
+        <ion-col>
           <ion-card>
             <ion-card-title>{{tutorial.nombre}}</ion-card-title>
             <ion-card-content>{{tutorial.descripcion}}</ion-card-content>
           </ion-card>
-      </ion-col>
-    </ion-row>
+        </ion-col>
+      </ion-row>
+    
 
     <!-- Fila con Ayuda y botón de Inicio -->
     <ion-row>
