@@ -29,7 +29,7 @@ CREATE TABLE alumno(
     FOREIGN KEY (user) REFERENCES usuario(user)
 );
 
-CREATE TABLE admin (
+CREATE TABLE administrador (
     user VARCHAR2(20) PRIMARY KEY,
 
     FOREIGN KEY (user) REFERENCES usuario(user)
