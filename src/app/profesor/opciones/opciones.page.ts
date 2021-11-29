@@ -6,7 +6,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tutoriales',
+  selector: 'app-opciones',
   templateUrl: './opciones.page.html',
   styleUrls: ['./opciones.page.scss'],
 })
