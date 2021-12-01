@@ -8,8 +8,8 @@
 function insertarUsuario($user, $password){
     require 'connection.php';
     $conn = createConnection();
-    $sql = "INSERT INTO usuario VALUES ('$user', '$password')"
-    $salida
+    $sql = "INSERT INTO usuario VALUES ('$user', '$password')";
+    $salida = "";
     if (mysqli_query($conn, $sql)){
         $salida = "Insertado con exito";
     }
@@ -18,14 +18,14 @@ function insertarUsuario($user, $password){
     }
 
     closeConnection($conn);
-    return $salida
+    return $salida;
 }
 
 function eliminarUsuario($user){
     require 'connection.php';
     $conn = createConnection();
-    $sql = "DELETE FROM usuario WHERE user='$user'"
-    $salida
+    $sql = "DELETE FROM usuario WHERE user='$user'";
+    $salida = "";
     if (mysqli_query($conn, $sql)){
         $salida = "Borrado con exito";
     }
@@ -34,7 +34,7 @@ function eliminarUsuario($user){
     }
 
     closeConnection($conn);
-    return $salida
+    return $salida;
 
 }
 
@@ -42,8 +42,8 @@ function modificarUsuario(){
     //Revisar
     require 'connection.php';
     $conn = createConnection();
-    $sql = "UPDATE INTO usuario VALUES ('$user', '$password')"
-    $salida
+    $sql = "UPDATE INTO usuario VALUES ('$user', '$password')";
+    $salida = "";
     if (mysqli_query($conn, $sql)){
         $salida = "Insertado con exito";
     }
@@ -52,7 +52,7 @@ function modificarUsuario(){
     }
 
     closeConnection($conn);
-    return $salida
+    return $salida;
 }
 
 

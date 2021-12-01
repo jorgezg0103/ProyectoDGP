@@ -5,7 +5,9 @@
 
 <?php
 
-function insertarAlumno(){
+function insertarAlumno($usuario, $contraseña, $dni, $nombre, $apellidos, $telefono, $discapacidad, $tutor, $prof){
+    require 'connection.php';
+    
 
 }
 
