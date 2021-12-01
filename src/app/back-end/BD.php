@@ -18,3 +18,11 @@ function dropBD(){
     return $output;
 }
 ?> 
+
+<!--$query = file_get_contents ('queries.sql');
+
+if ($conn->query($query) === TRUE) {
+    echo "all tables created successfully <br/>";
+} else {
+    echo "Error creating tables: " . $conn->error;
+}-->
