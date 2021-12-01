@@ -55,5 +55,4 @@ function modificarUsuario(){
     return $salida;
 }
 
-
 ?>

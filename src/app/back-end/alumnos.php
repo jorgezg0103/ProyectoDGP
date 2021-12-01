@@ -8,7 +8,6 @@
 function insertarAlumno($usuario, $contraseña, $dni, $nombre, $apellidos, $telefono, $discapacidad, $tutor, $prof){
     require 'connection.php';
     
-
 }
 
 function borrarAlumno(){
@@ -29,6 +28,14 @@ function modificarTutorLegal(){
 
 function eliminarTutorLegal(){
     
+}
+
+function listaAlumnos(){
+
+}
+
+function leerAlumno(){
+
 }
 
 ?>

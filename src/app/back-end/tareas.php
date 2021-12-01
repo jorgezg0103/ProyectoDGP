@@ -2,3 +2,31 @@
 <!--Fichero encargado de las funciones relativas a las tareas y su interaccion con la BD-->
 <!--Autor: Jesús López Rodríguez-->
 <!--Se definen las funciones necesarias en php-->
+
+<?php
+
+function insertarTarea(){
+
+}
+
+function modificarTarea(){
+
+}
+
+function eliminarTarea(){
+
+}
+
+function leerTarea(){
+
+}
+
+function asignarTarea(){
+
+}
+
+function listaTareas(){
+
+}
+
+?>
