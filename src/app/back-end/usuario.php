@@ -10,7 +10,7 @@ function insertarUsuario($user, $password){
     $conn = createConnection();
     $sql = "INSERT INTO usuario VALUES ('$user', '$password')"
     $salida
-    if ($conn->execute($sql)){
+    if (mysqli_query($conn, $sql)){
         $salida = "Insertado con exito";
     }
     else {
@@ -26,7 +26,7 @@ function eliminarUsuario($user){
     $conn = createConnection();
     $sql = "DELETE FROM usuario WHERE user='$user'"
     $salida
-    if ($conn->execute($sql)){
+    if (mysqli_query($conn, $sql)){
         $salida = "Borrado con exito";
     }
     else {
@@ -44,7 +44,7 @@ function modificarUsuario(){
     $conn = createConnection();
     $sql = "UPDATE INTO usuario VALUES ('$user', '$password')"
     $salida
-    if ($conn->execute($sql)){
+    if (mysqli_query($conn, $sql)){
         $salida = "Insertado con exito";
     }
     else {
