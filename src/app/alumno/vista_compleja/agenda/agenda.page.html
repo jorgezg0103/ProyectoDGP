@@ -10,60 +10,40 @@
 </ion-header>
 
 <ion-content>
-  <div id = "container">
-    
-    <ion-grid>
 
-      <ion-row *ngFor="let tarea of tareas | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
-          
-        <ion-col>
-          
-          <ion-card>
-                            
-            <ion-img [src]="tarea.imageURL"></ion-img> 
-            <div class="nombreTarea">{{tarea.nombre}}</div>
+  <ion-row>
+    <!-- Flecha hacia atras -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
 
-          </ion-card>
+    <!-- Titulo del calendario -->
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{viewTitle}}</h2>
+    </ion-col>
 
-        </ion-col>
-      
-      </ion-row>
-      
-      <!-- Fila con Ayuda y botón de Inicio -->
-      <ion-row>
-      
-        <ion-col>
-          <ion-card>
-            <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
-            <ion-card-header>
-              <ion-card-title>Ayuda</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-      
-        <ion-col>
-          <ion-card [routerLink]="['../home']">
-            <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
-            <ion-card-header>
-              <ion-card-title>Inicio</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-      
-      </ion-row>
-        
-      <!-- Aquí se pone el control del paginación -->
-      <div class="paginacion">
-        <pagination-controls 
-          (pageChange)="pagina_actual = $event" 
-          previousLabel="" 
-          nextLabel="" 
-          maxSize=""
-        ></pagination-controls>
-      </div>
-        
-    </ion-grid>
-    
-  </div>
+    <!-- Flecha hacia delante -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <!-- Calendario -->
+  <calendar
+  [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  noEventsLabel="Sin tareass"
+  allDayLabel="Tarea"
+  startingDayMonth="1"
+  formatDayHeader="EEEEEE"
+  formatDay="d"
+  >
+  </calendar>
 
 </ion-content>
