@@ -15,9 +15,10 @@
 
     <!-- Se insertan los tutoriales -->
     
-      <ion-row *ngFor="let tutorial of tutoriales | paginate: { itemsPerPage: 4, currentPage: pagina_actual }">
+      <ion-row *ngFor="let tutorial of tutoriales | paginate: { itemsPerPage: 2, currentPage: pagina_actual }">
         <ion-col>
           <ion-card>
+            <img src="assets/pictograms/borde/cambiar.png"/>
             <ion-card-title>{{tutorial.nombre}}</ion-card-title>
             <ion-card-content>{{tutorial.descripcion}}</ion-card-content>
           </ion-card>
