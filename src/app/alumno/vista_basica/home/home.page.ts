@@ -4,6 +4,7 @@
 //Define el modulo de los principales componentes de la página web
 
 import { Component } from '@angular/core';
+//import { AppComponent } from '../../../app.component'
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() {
+    // this.getUrl();
+  }
+  hola = '36994';
+
+  getUrl(id: number, colorBoolean:string, backgroundColor:string) {
+    let url="https://api.arasaac.org/api/pictograms/";
+    // 36994?plural=false&color=true&backgroundColor=#ffffff&download=false
+    url+=id.toString();
+    url+="?plural=false&color=";
+    url+=colorBoolean;
+    url+="&backgroundColor=#";
+    url+=backgroundColor;
+    url+="&download=false";
+    return url;
+
+  }
 
 }
