@@ -24,7 +24,11 @@ export class HomePage {
     url+=id.toString();
     url+="?plural=false&color=";
     url+=colorBoolean;
+<<<<<<< HEAD
     url+="&backgroundColor=%23";
+=======
+    url+="&backgroundColor=#";
+>>>>>>> 700fd2b4aed6eada3c12264cb3c7abec76bc644c
     url+=backgroundColor;
     url+="&download=false";
     return url;
