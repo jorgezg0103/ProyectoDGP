@@ -4,7 +4,7 @@
 <!--Se definen las funciones necesarias en php-->
 
 <?php
-
+require 'connection.php';
 function insertarTarea(){
 
 }

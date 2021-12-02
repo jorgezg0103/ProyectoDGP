@@ -4,7 +4,7 @@
 <!--Se definen las funciones necesarias en php-->
 
 <?php
-
+require 'connection.php';
 function insertarTutorial(){
 
 }
@@ -18,6 +18,10 @@ function eliminarTutorial(){
 }
 
 function leerTutorial(){
+
+}
+
+function listaTutoriales(){
 
 }
 
