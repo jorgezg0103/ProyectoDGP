@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+  // hola = '36994';
+  //
+  // getUrl(url: string) {
+  //   return url;
+  // }
+
 }
