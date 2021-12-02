@@ -10,3 +10,6 @@ base de datos: AVzOphS8yY
 contraseña: BJojxLnXQN
 
 https://paiza.io
+
+Libreria para calendario. Desde terminal en la carpeta del proyecto, ejecutar:
+npm install ionic2-calendar
