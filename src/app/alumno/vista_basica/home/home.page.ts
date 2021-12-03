@@ -5,6 +5,7 @@
 
 import { Component } from '@angular/core';
 //import { AppComponent } from '../../../app.component'
+import {ImageUrlService} from '../../../services/image-url.service'
 
 @Component({
   selector: 'app-home',
@@ -13,22 +14,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {
-    // this.getUrl();
+  naranja='ff9800';
+  morado='FDA1FF';
+  menu: string;
+  agenda: string;
+  ayuda: string;
+
+
+
+  constructor(private urlService:ImageUrlService) {
+    this.getUrls();
   }
-  hola = '36994';
 
-  getUrl(id: number, colorBoolean:string, backgroundColor:string) {
-    let url="https://api.arasaac.org/api/pictograms/";
-    // 36994?plural=false&color=true&backgroundColor=#ffffff&download=false
-    url+=id.toString();
-    url+="?plural=false&color=";
-    url+=colorBoolean;
-    url+="&backgroundColor=%23";
-    url+=backgroundColor;
-    url+="&download=false";
-    return url;
-
+  getUrls() {
+    this.menu=this.urlService.getUrl(32514,'true',this.naranja);
+    this.agenda=this.urlService.getUrl(5898,'true',this.naranja);
+    this.ayuda=this.urlService.getUrl(7171,'true',this.morado);
   }
 
 }

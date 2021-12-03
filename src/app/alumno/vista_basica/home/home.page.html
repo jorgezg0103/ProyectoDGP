@@ -23,9 +23,7 @@
 
             <ion-col>
                 <ion-card [routerLink]="['../menu']">
-                  <!-- <img src="assets/pictograms/fondo/menu.png"/> -->
-                  <img src="{{ getUrl(32514,'true','000000') }}"/>
-                  <!-- <img src="https://api.arasaac.org/api/pictograms/36994?plural=false&color=true&backgroundColor=#ffffff&download=false"/>  -->
+                  <img src="{{ menu }}"/>
                   <ion-card-header>
                     <ion-card-title>MENÚ</ion-card-title>
                   </ion-card-header>
@@ -53,7 +51,7 @@
             <ion-col>
 
               <ion-card [routerLink]="['../agenda']">
-                <img src="assets/pictograms/fondo/agenda.png"/>
+                <img src="{{agenda}}"/>
                 <ion-card-header>
                   <ion-card-title>Agenda</ion-card-title>
                 </ion-card-header>
@@ -70,7 +68,7 @@
 
             <ion-col>
               <ion-card>
-                <img src= "assets/pictograms/fondo/necesito_ayuda.png"/>
+                <img src= "{{ayuda}}"/>
                 <ion-card-header>
                   <ion-card-title>AYUDA</ion-card-title>
                 </ion-card-header>
