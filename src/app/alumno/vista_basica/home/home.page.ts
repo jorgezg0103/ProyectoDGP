@@ -6,7 +6,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { AppComponent } from '../../../app.component'
 import {ImageUrlService} from '../../../services/image-url.service'
-import { Platform } from '@ionic/angular';
+import { PaginationSizeBasedService } from '../../../services/pagination-size-based.service'
 
 @Component({
   selector: 'app-home',
@@ -38,26 +38,13 @@ export class HomePage implements OnInit {
 
   ]
 
-  constructor(private urlService:ImageUrlService, private platform:Platform)  {
+  constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService)  {
     this.getUrls();
     //this.itemsPerPage=this.getItemsPerPage();
   }
 
   ngOnInit(){
-    let items=0;
-    let width=this.platform.width();
-    let height=this.platform.height();
-    // console.log('Width: ' + width);
-    // console.log('Height: ' + height);
-    items=Math.floor(width/200);
-    console.log(items);
-    // console.log("adios");
-    if(items>=this.opciones.length){
-      var paginacionHTML=document.getElementById('paginacion');
-      console.log("hola");
-      paginacionHTML.style.display="none";
-    }
-    this.itemsPerPage=items;
+    this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
   }
   getUrls() {
     this.menuURL=this.urlService.getUrl(32514,'true',this.naranja);
