@@ -55,8 +55,5 @@ export class HomePage implements OnInit {
     this.opciones[1].imageURL=this.agendaURL;
   }
 
-  getItemsPerPage(){
-
-  }
 
 }

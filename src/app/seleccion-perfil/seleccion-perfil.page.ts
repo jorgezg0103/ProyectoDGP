@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginationSizeBasedService } from '../services/pagination-size-based.service'
 
 @Component({
   selector: 'app-seleccion-perfil',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SeleccionPerfilPage implements OnInit {
 
   pagina_actual: number = 1;
+  itemsPerPage:number=2;
 
   private perfiles = [
     {
@@ -40,9 +42,10 @@ export class SeleccionPerfilPage implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private paginationManager:PaginationSizeBasedService) { }
 
   ngOnInit() {
+    // this.itemsPerPage=this.paginationManager.adjustPagination(this.perfiles.length); //Esto da error la primera vez que se ejecuta pero no en reload no entiendo
   }
 
 }
