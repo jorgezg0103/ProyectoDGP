@@ -19,69 +19,47 @@
         <ion-grid>
 
           <!-- Fila con menu y tutoriales  -->
-          <ion-row>
-
-            <ion-col>
-                <ion-card [routerLink]="['../menu']">
-                  <img src="{{ menu }}"/>
-                  <ion-card-header>
-                    <ion-card-title>MENÚ</ion-card-title>
-                  </ion-card-header>
+          <div class="filas">
+          <ion-row >
+            <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
+                <ion-card [routerLink]="opcion.to">
+                  <img src="{{opcion.imageURL}}"/>
+                  <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
                 </ion-card>
             </ion-col>
-
-            <!--
-            <ion-col>
-              <ion-card [routerLink]="['../tutoriales']">
-                <img src="https://library.kissclipart.com/20181007/jtw/kissclipart-webinars-icon-png-clipart-computer-icons-web-confe-680ac42975b629d6.png" />
-                <ion-card-header>
-                  <ion-card-title>Tutorial</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-            -->
-
           </ion-row>
-
-          <!-- Fila con agenda  -->
-          <ion-row>
-
-            <!--<ion-col></ion-col>-->
-
-            <ion-col>
-
-              <ion-card [routerLink]="['../agenda']">
-                <img src="{{agenda}}"/>
-                <ion-card-header>
-                  <ion-card-title>Agenda</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-
-            </ion-col>
-
-            <!--<ion-col></ion-col>-->
-
-          </ion-row>
+          </div>
+        </ion-grid>
+        <div class="paginacion" id="paginacion">
+          <pagination-controls
+            (pageChange)="pagina_actual = $event"
+            previousLabel=""
+            nextLabel=""
+            maxSize=""
+          ></pagination-controls>
+        </div>
+        </div>
+      </ion-content>
+      <ion-footer class="footer">
+        <ion-toolbar>
+          <!-- <h1></h1> -->
 
           <!-- Fila con Ayuda  -->
-          <ion-row size>
+        <div class="ayuda">
 
-            <ion-col>
+          <ion-grid>
+          <ion-row size>
+            <ion-col col-auto>
               <ion-card>
-                <img src= "{{ayuda}}"/>
-                <ion-card-header>
-                  <ion-card-title>AYUDA</ion-card-title>
-                </ion-card-header>
+                <img src= "{{ayudaURL}}"/>
+                <ion-card-title><strong>AYUDA</strong></ion-card-title>
               </ion-card>
             </ion-col>
-
             <ion-col></ion-col>
           </ion-row>
-
-
-        </ion-grid>
-      </div>
-    </ion-content>
-
+          </ion-grid>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
   </ion-app>
 </body>
