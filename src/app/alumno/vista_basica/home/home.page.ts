@@ -16,8 +16,6 @@ import { PaginationSizeBasedService } from '../../../services/pagination-size-ba
 export class HomePage implements OnInit {
   pagina_actual: number = 1;
   itemsPerPage: number =2;
-  naranja='ff9800';
-  morado='FDA1FF';
   menuURL: string;
   agendaURL: string;
   ayudaURL: string;
@@ -40,16 +38,15 @@ export class HomePage implements OnInit {
 
   constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService)  {
     this.getUrls();
-    //this.itemsPerPage=this.getItemsPerPage();
   }
 
   ngOnInit(){
     this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
   }
   getUrls() {
-    this.menuURL=this.urlService.getUrl(32514,'true',this.naranja);
-    this.agendaURL=this.urlService.getUrl(5898,'true',this.naranja);
-    this.ayudaURL=this.urlService.getUrl(7171,'true',this.morado);
+    this.menuURL=this.urlService.getUrl(32514,'true',this.urlService.naranja);
+    this.agendaURL=this.urlService.getUrl(5898,'true',this.urlService.naranja);
+    this.ayudaURL=this.urlService.getAyudaURL(this.urlService.morado);
 
     this.opciones[0].imageURL=this.menuURL;
     this.opciones[1].imageURL=this.agendaURL;

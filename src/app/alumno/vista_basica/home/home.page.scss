@@ -63,10 +63,10 @@
 //
 // }
 .filas ion-col{
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
-.footer{
+.ion-no-border{
   // height: auto;
   text-align: center;
 
@@ -101,7 +101,7 @@
   position: absolute;
   // font-size: 50px;
   // position: relative;
-  bottom: 25%;
+  bottom: 23%;
   left: 0;
   right: 0;
 
@@ -109,6 +109,6 @@
   // margin-top: 0;
   // background-color: white;
 }
-.footer ion-toolbar{
+.ion-no-border ion-toolbar{
   // padding: 0;
 }

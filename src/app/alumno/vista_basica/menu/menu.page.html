@@ -20,59 +20,40 @@
           <!-- Fila con 1 y 2 plato-->
           <ion-row>
 
-            <ion-col>
-                <ion-card>
-                  <img src="assets/pictograms/fondo/primer_plato.png"/>
-                  <ion-card-header>
-                    <ion-card-title>Primer plato</ion-card-title>
-                  </ion-card-header>
+            <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
+                <ion-card [routerLink]="opcion.to">
+                  <img src="{{opcion.imageURL}}"/>
+                  <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
                 </ion-card>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-card>
-                <img src="assets/pictograms/fondo/segundo_plato.png"/>
-                <ion-card-header>
-                  <ion-card-title>Segundo plato</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
 
-          </ion-row>
-
-
-          <!-- Fila con el postre -->
-          <ion-row>
-
-            <ion-col>
-                <ion-card>
-                  <img src="assets/pictograms/fondo/postre.png"/>
-                  <ion-card-header>
-                    <ion-card-title>Tercer plato</ion-card-title>
-                  </ion-card-header>
-                </ion-card>
-            </ion-col>
-
-          </ion-row>
+          <div class="paginacion" id="paginacion">
+            <pagination-controls
+              (pageChange)="pagina_actual = $event"
+              previousLabel=""
+              nextLabel=""
+              maxSize=""
+            ></pagination-controls>
+          </div>
 
           <!-- Fila con Ayuda y botón de Inicio -->
           <ion-row>
 
             <ion-col size="6">
               <ion-card>
-                <img src="assets/pictograms/fondo/necesito_ayuda.png"/>
+                <img src="{{ ayudaURL }}"/>
                 <ion-card-header>
-                  <ion-card-title>Ayuda</ion-card-title>
+                  <ion-card-title>AYUDA</ion-card-title>
                 </ion-card-header>
               </ion-card>
             </ion-col>
 
             <ion-col>
               <ion-card [routerLink]="['../home']">
-                <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
+                <img src= "{{ homeURL }}"/>
                 <ion-card-header>
-                  <ion-card-title>Inicio</ion-card-title>
+                  <ion-card-title>INICIO</ion-card-title>
                 </ion-card-header>
               </ion-card>
             </ion-col>

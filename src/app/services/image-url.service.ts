@@ -4,7 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ImageUrlService {
-
+  naranja='ff9800';
+  morado='FDA1FF';
+  blanco='ffffff';
   constructor() { }
 
   getUrl(id: number, colorBoolean:string, backgroundColor:string) {
@@ -17,6 +19,21 @@ export class ImageUrlService {
     url+=backgroundColor;
     url+="&download=false";
     return url;
+  }
 
+  getAyudaURL(backgroundColor:string){
+    let url="https://api.arasaac.org/api/pictograms/7171?plural=false&color=false&backgroundColor=%23";
+    url+=backgroundColor;
+    url+="&download=false";
+    return url;
+  }
+
+  getHomeURL(colorBoolean:string,backgroundColor:string){
+    let url="https://api.arasaac.org/api/pictograms/6964?plural=false&color=";
+    url+=colorBoolean;
+    url+="&backgroundColor=%23";
+    url+=backgroundColor;
+    url+="&download=false";
+    return url;
   }
 }
