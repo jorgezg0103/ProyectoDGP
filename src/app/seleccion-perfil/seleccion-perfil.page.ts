@@ -45,7 +45,7 @@ export class SeleccionPerfilPage implements OnInit {
   constructor(private paginationManager:PaginationSizeBasedService) { }
 
   ngOnInit() {
-    // this.itemsPerPage=this.paginationManager.adjustPagination(this.perfiles.length); //Esto da error la primera vez que se ejecuta pero no en reload no entiendo
+    this.itemsPerPage=this.paginationManager.adjustPaginationFirstTime(this.perfiles.length); //Esto da error la primera vez que se ejecuta pero no en reload no entiendo
   }
 
 }
