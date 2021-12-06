@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ComandaPage
+  },
+  {
+    path: 'aniadir-comanda',
+    loadChildren: () => import('./aniadir-comanda/aniadir-comanda.module').then( m => m.AniadirComandaPageModule)
   }
 ];
 

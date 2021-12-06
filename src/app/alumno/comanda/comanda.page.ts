@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import {ImageUrlService} from '../../services/image-url.service';
 import { ComandasService } from '../../services/comandas.service';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-comanda',
   templateUrl: './comanda.page.html',
@@ -10,7 +10,7 @@ import { ComandasService } from '../../services/comandas.service';
 export class ComandaPage implements OnInit {
   private comandasTomadas=[];
 
-  constructor(private comandaService:ComandasService) {
+  constructor(private comandaService:ComandasService, private router: Router) {
     // this.getUrls();
     this.comandasTomadas=comandaService.getComandas();
   }
@@ -23,7 +23,6 @@ export class ComandaPage implements OnInit {
 
 
   pulsarBoton(){
-    this.comandaService.aniadirComanda('Antonio','https://cdn-icons-png.flaticon.com/512/119/119647.png',
-                    2448,2448,2448);
+    this.router.navigateByUrl('/alumno/comanda/aniadir-comanda');
   }
 }
