@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>comanda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <!-- Filas con comandas tomadas  -->
+    <div class="filas">
+      <ion-col col-auto *ngFor="let comanda of comandasTomadas">
+        <ion-row>
+          <ion-col size="3">
+            <img src="{{comanda.fotoalumno}}"/>
+          </ion-col>
+          <ion-col size="3">
+            <img src="{{comanda.primero}}"/>
+          </ion-col>
+          <ion-col size="3">
+            <img src="{{comanda.segundo}}"/>
+          </ion-col>
+          <ion-col size="3">
+            <img src="{{comanda.postre}}"/>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-button expand="block" color='medium' (click)="pulsarBoton()">Añadir</ion-button>
+    </div>
+  </ion-grid>
+
+</ion-content>
