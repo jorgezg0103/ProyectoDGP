@@ -1,0 +1,25 @@
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+
+    <!-- Fila con Ayuda  -->
+  <div class="ayuda">
+      <ion-grid>
+      <ion-row size>
+        <ion-col col-auto>
+          <ion-card>
+            <img src= "{{ayudaURL}}"/>
+            <ion-card-title><strong>AYUDA</strong></ion-card-title>
+          </ion-card>
+        </ion-col>
+        <!-- Fila con Volver a Home -->
+        <ion-col>
+          <ion-card [routerLink]="[whereisHome]">
+            <img src= "{{ homeURL }}"/>
+            <ion-card-title><strong>INICIO</strong></ion-card-title>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+    </div>
+  </ion-toolbar>
+</ion-footer>

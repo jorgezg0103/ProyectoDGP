@@ -13,6 +13,8 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+
 
 @NgModule({
   imports: [
@@ -22,6 +24,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MenuPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, FooterAyudaHomeComponent]
 })
 export class MenuPageModule {}
