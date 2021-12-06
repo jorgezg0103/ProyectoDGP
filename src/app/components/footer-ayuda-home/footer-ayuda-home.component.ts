@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ImageUrlService} from '../../services/image-url.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,9 +11,18 @@ import {ImageUrlService} from '../../services/image-url.service'
 export class FooterAyudaHomeComponent implements OnInit {
   ayudaURL: string;
   homeURL:string;
-  whereisHome:string='/alumno/vista_basica/home';
-  constructor(private urlService:ImageUrlService) {
+  whereisHome:string='';
+  public href: string = "";
+
+  constructor(private urlService:ImageUrlService, private router: Router) {
     this.getUrls();
+    this.updateHomeRoute();
+  }
+
+  updateHomeRoute(){
+    this.href = this.router.url;
+    let actualRoute: string[] = this.href.split("/");
+    this.whereisHome = '/alumno/' + actualRoute[2] + '/home';
   }
 
   ngOnInit() {}
