@@ -5,6 +5,9 @@ import {ImageUrlService} from './image-url.service';
   providedIn: 'root'
 })
 export class ComandasService {
+  private primero:number=2448;
+  private segundo:number =2448;
+  private postre:number=2448;
   private comandasTomadas = [
     {
       id:1,
@@ -40,16 +43,19 @@ export class ComandasService {
     this.comandasTomadas[1].segundo=this.urlService.getUrl(29195,'true',this.urlService.blanco);
     this.comandasTomadas[1].postre=this.urlService.getUrl(2420,'true',this.urlService.blanco);
   }
-  aniadirComanda(nombreAlumno:string,foto:string,idPrimero,idSegundo,idPostre){
+  aniadirComanda(nombreAlumno:string,foto:string){
     var nuevaComanda={
       id:this.comandasTomadas.length+1,
       alumno:nombreAlumno,
       fotoalumno:foto,
-      primero:this.urlService.getUrl(idPrimero,'true',this.urlService.blanco),
-      segundo:this.urlService.getUrl(idSegundo,'true',this.urlService.blanco),
-      postre:this.urlService.getUrl(idPostre,'true',this.urlService.blanco)
+      primero:this.urlService.getUrl(this.primero,'true',this.urlService.blanco),
+      segundo:this.urlService.getUrl(this.segundo,'true',this.urlService.blanco),
+      postre:this.urlService.getUrl(this.postre,'true',this.urlService.blanco)
     };
     this.comandasTomadas.push(nuevaComanda);
   }
 
+  seleccionarPrimero(id:number){
+    this.primero=id;
+  }
 }

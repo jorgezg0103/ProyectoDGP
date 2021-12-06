@@ -14,7 +14,7 @@
       <ion-row>
 
         <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
-            <ion-card [routerLink]="opcion.to">
+            <ion-card (click)="seleccionarPrimero(opcion.id)">
               <img src="{{opcion.imageURL}}"/>
               <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
             </ion-card>

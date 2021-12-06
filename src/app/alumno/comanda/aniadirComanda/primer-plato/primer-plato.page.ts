@@ -49,8 +49,9 @@ export class PrimerPlatoPage implements OnInit {
     this.ayudaURL=this.urlService.getAyudaURL(this.urlService.morado);
     this.homeURL=this.urlService.getHomeURL('true',this.urlService.blanco);
   }
-  seleccionarPrimero(){
-
+  seleccionarPrimero(id:number){
+    this.comandaService.seleccionarPrimero(id);
+    this.router.navigateByUrl('/alumno/comanda/aniadir-comanda');
   }
 
 }
