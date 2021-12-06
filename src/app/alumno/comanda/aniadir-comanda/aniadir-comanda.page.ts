@@ -23,19 +23,19 @@ export class AniadirComandaPage implements OnInit {
     {
       id:'1',
       nombre:'PRIMER PLATO',
-      to:'../menu',
+      to:'./primer-plato',
       imageURL:''
     },
     {
       id:'2',
       nombre:'SEGUNDO PLATO',
-      to:'../agenda',
+      to:'./segundo-plato',
       imageURL:''
     },
     {
       id:'3',
       nombre:'POSTRE',
-      to:'../agenda',
+      to:'./postre',
       imageURL:''
     }
 ]
