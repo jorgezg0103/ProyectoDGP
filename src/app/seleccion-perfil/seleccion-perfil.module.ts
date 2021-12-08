@@ -9,6 +9,7 @@ import { SeleccionPerfilPageRoutingModule } from './seleccion-perfil-routing.mod
 import { SeleccionPerfilPage } from './seleccion-perfil.page';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import {IteratePaginatedGridComponent} from '../components/iterate-paginated-grid/iterate-paginated-grid.component'
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SeleccionPerfilPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [SeleccionPerfilPage]
+  declarations: [SeleccionPerfilPage,IteratePaginatedGridComponent]
 })
 export class SeleccionPerfilPageModule {
 }

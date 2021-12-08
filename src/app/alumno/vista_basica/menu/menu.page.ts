@@ -1,6 +1,6 @@
 //Nombre de archivo:menu.page.ts
 //Fichero encargado de dirigirel routing hacia la página principal o al fichero de estilo
-//Autor: Miguel Carracedo Rodríguez
+//Autor: Laura Ortiz González
 //Define el modulo de los principales componentes de la página web
 
 import { Component, OnInit } from '@angular/core';
@@ -13,9 +13,6 @@ import { PaginationSizeBasedService } from '../../../services/pagination-size-ba
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  // pagina_actual: number = 1;
-  // itemsPerPage: number =2;
-
   primerPlatoURL: string;
   segundoPlatoURL: string;
   postreURL: string;
@@ -42,15 +39,12 @@ export class MenuPage implements OnInit {
       imageURL:''
     }
 ]
-// private hola:string[]=["hola","adios"];
   constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService) {
     this.getUrls();
     this.opcionesInputeadas=JSON.stringify(this.opciones);
   }
 
   ngOnInit() {
-    // this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
-
   }
 
   getUrls(){

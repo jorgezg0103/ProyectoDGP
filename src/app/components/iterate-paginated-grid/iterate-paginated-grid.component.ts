@@ -1,3 +1,8 @@
+//Nombre de archivo:iterate-paginated-grid.component.ts
+//Fichero con las variables a utilizar en el html
+//Autor: Laura Ortiz González
+//Input: array de opciones a mostrar en la página
+
 import { Component, OnInit, Input } from '@angular/core';
 import { PaginationSizeBasedService } from '../../services/pagination-size-based.service'
 
@@ -10,45 +15,13 @@ import { PaginationSizeBasedService } from '../../services/pagination-size-based
 export class IteratePaginatedGridComponent implements OnInit {
   pagina_actual: number = 1;
   itemsPerPage: number =2;
-  // @Input() opciones= [
-  //   {
-  //     id:'1',
-  //     nombre:'PRIMER PLATO',
-  //     to:'../menu',
-  //     imageURL:''
-  //   }
-  // ]
-  @Input() opcionesInput:any;
-  private opciones = [
-    {
-      id:'1',
-      nombre:'PRIMER PLATO',
-      to:'../menu',
-      imageURL:''
-    },
-    {
-      id:'2',
-      nombre:'SEGUNDO PLATO',
-      to:'../agenda',
-      imageURL:''
-    },
-    {
-      id:'3',
-      nombre:'POSTRE',
-      to:'../agenda',
-      imageURL:''
-    }
-]
-  constructor( private paginationManager:PaginationSizeBasedService) {
-    // this.opciones=
-  }
+  @Input() opciones:any;
+
+  constructor( private paginationManager:PaginationSizeBasedService) { }
 
   ngOnInit() {
-    // this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
-    console.log(this.opciones);
-    this.opcionesInput=JSON.parse(this.opcionesInput);
-    console.log("Opciones input:"+ this.opcionesInput[0].id);
-    console.log("Ttamano: "+this.opcionesInput.length);
+    this.opciones=JSON.parse(this.opciones);
+    this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
   }
 
 }

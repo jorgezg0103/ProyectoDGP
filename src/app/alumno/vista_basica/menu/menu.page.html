@@ -1,6 +1,6 @@
 <!--Nombre del archivo: menu.page.html-->
 <!--Fichero encargado de la creación de la página web para que el alumno pueda ver los distintos tutoriales-->
-<!--Autor: Miguel Carracedo Rodríguez-->
+<!--Autor: Laura Ortiz González-->
 <!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al alumno el menú que ha elegido ese día-->
 
 <body>
@@ -12,33 +12,7 @@
     </ion-header>
 
     <ion-content fullscreen>
-
-      <!-- <div id="container">
-        <ion-grid>
-          <!-- Fila con 1 y 2 plato-->
-        <!--  <ion-row>
-
-            <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
-                <ion-card [routerLink]="opcion.to">
-                  <img src="{{opcion.imageURL}}"/>
-                  <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
-                </ion-card>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <div class="paginacion" id="paginacion">
-              <pagination-controls
-                (pageChange)="pagina_actual = $event"
-                previousLabel=""
-                nextLabel=""
-                maxSize=""
-              ></pagination-controls>
-            </div>
-          </ion-row>
-        </ion-grid>
-      </div> -->
-      <iterate-paginated-grid opcionesInput={{opcionesInputeadas}}></iterate-paginated-grid>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
     </ion-content>
     <!-- Fila con Ayuda y botón de Inicio -->
     <footer-ayuda-home></footer-ayuda-home>

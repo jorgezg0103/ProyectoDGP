@@ -1,6 +1,6 @@
 //Nombre de archivo:menu.module.ts
 //Fichero encargado de agrupar todos los modulos utilizados en la página
-//Autor: Miguel Carracedo Rodríguez
+//Autor: Miguel Carracedo Rodríguez, Laura Ortiz González
 //Define una  agrupacion de todos los modulos a usar
 
 import { NgModule } from '@angular/core';

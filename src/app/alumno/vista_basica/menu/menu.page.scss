@@ -1,52 +1,9 @@
 //Nombre de archivo:menu.page.scss
 //Fichero encargado del estilo de la página web
-//Autor: Miguel Carracedo Rodríguez
+//Autor: Laura Ortiz González
 //Define el estilo de los distintos contenidos de la página web
-
-#container {
-    text-align: center;
-
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-
-    color: #8c8c8c;
-
-    margin: 0;
-  }
-
-  #container a {
-    text-decoration: none;
-  }
-
-  img{
-    max-width: 100%;
-    height: auto;
-  }
-
-  ion-card-title{
-    font-size: 15px;
-  }
-
-
-  ion-title {
-    font-size: 25px;
-  }
 
   ion-content {
     --overflow: hidden;
 
-  }
-  .paginacion{
-    bottom: 28%;
   }
