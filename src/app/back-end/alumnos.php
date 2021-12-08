@@ -22,10 +22,12 @@ function insertarAlumno($usuario, $nombre, $apellidos, $discapacidad){
 }
 
 function borrarAlumno(){
+    
 
 }
 
 function modificarAlumno(){
+    
 
 }
 

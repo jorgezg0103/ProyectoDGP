@@ -22,6 +22,7 @@
          mysqli_close($conn);
          */
 
+         
          function createConnection(){
             $dbhost = 'remotemysql.com:3306';
             $dbuser = 'AVzOphS8yY';
