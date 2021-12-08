@@ -15,12 +15,9 @@ export class PaginationSizeBasedService {
   adjustPagination(numberOfItems: number){
     let items=0;
     let width=this.platform.width();
-    let height=this.platform.height();
-    // console.log('Width: ' + width);
-    // console.log('Height: ' + height);
-    items=Math.floor(width/200);
-    // console.log(items);
-    // console.log("adios");
+    let height=this.platform.height()-0.4*this.platform.height();
+    let max=Math.max(width,height);
+    items=Math.floor(max/220);
     if(items>=numberOfItems){
       var paginacionHTML=document.getElementById('paginacion');
       paginacionHTML.style.display="none";
