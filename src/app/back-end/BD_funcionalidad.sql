@@ -18,6 +18,8 @@ CREATE TABLE profesor (
     email VARCHAR2
 );
 
+
+
 CREATE TABLE tarea (
     idTarea INTEGER PRIMARY KEY,
     descripcion TEXT,

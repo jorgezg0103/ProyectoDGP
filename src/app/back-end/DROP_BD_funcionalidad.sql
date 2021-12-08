@@ -7,5 +7,5 @@ drop table explica;
 drop table tutoriales;
 drop table responsable;
 drop table tarea;
-drop table alumno;
 drop table profesor;
+drop table alumno;
