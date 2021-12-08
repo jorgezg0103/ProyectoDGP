@@ -11,28 +11,28 @@
 
 <ion-content>
   <div id = "container">
-    
+
     <ion-grid>
 
       <ion-row *ngFor="let tarea of tareas | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
-          
+
         <ion-col>
-          
+
           <ion-card>
-                            
-            <ion-img [src]="tarea.imageURL"></ion-img> 
+
+            <ion-img [src]="tarea.imageURL"></ion-img>
             <div class="nombreTarea">{{tarea.nombre}}</div>
 
           </ion-card>
 
         </ion-col>
-      
+
       </ion-row>
-      
+
       <!-- Fila con Ayuda y botón de Inicio -->
-      <ion-row>
-      
-        <ion-col>
+      <!-- <ion-row> -->
+
+        <!-- <ion-col>
           <ion-card>
             <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
             <ion-card-header>
@@ -40,7 +40,7 @@
             </ion-card-header>
           </ion-card>
         </ion-col>
-      
+
         <ion-col>
           <ion-card [routerLink]="['../home']">
             <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
@@ -49,21 +49,23 @@
             </ion-card-header>
           </ion-card>
         </ion-col>
-      
-      </ion-row>
-        
+
+      </ion-row> -->
+
+      <footer-ayuda-home></footer-ayuda-home>
+
       <!-- Aquí se pone el control del paginación -->
       <div class="paginacion">
-        <pagination-controls 
-          (pageChange)="pagina_actual = $event" 
-          previousLabel="" 
-          nextLabel="" 
+        <pagination-controls
+          (pageChange)="pagina_actual = $event"
+          previousLabel=""
+          nextLabel=""
           maxSize=""
         ></pagination-controls>
       </div>
-        
+
     </ion-grid>
-    
+
   </div>
 
 </ion-content>

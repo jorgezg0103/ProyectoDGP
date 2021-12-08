@@ -13,12 +13,10 @@
 
     <ion-content fullscreen>
 
-      <div id="container">
+      <!-- <div id="container">
         <ion-grid>
-
-
           <!-- Fila con 1 y 2 plato-->
-          <ion-row>
+        <!--  <ion-row>
 
             <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
                 <ion-card [routerLink]="opcion.to">
@@ -28,43 +26,21 @@
             </ion-col>
           </ion-row>
 
-          <div class="paginacion" id="paginacion">
-            <pagination-controls
-              (pageChange)="pagina_actual = $event"
-              previousLabel=""
-              nextLabel=""
-              maxSize=""
-            ></pagination-controls>
-          </div>
-
-          <!-- Fila con Ayuda y botón de Inicio -->
-          <!-- <ion-row>
-
-            <ion-col size="6">
-              <ion-card>
-                <img src="{{ ayudaURL }}"/>
-                <ion-card-header>
-                  <ion-card-title>AYUDA</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-
-            <ion-col>
-              <ion-card [routerLink]="['../home']">
-                <img src= "{{ homeURL }}"/>
-                <ion-card-header>
-                  <ion-card-title>INICIO</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-
-          </ion-row> -->
-          <footer-ayuda-home></footer-ayuda-home>
-
-
-
+          <ion-row>
+            <div class="paginacion" id="paginacion">
+              <pagination-controls
+                (pageChange)="pagina_actual = $event"
+                previousLabel=""
+                nextLabel=""
+                maxSize=""
+              ></pagination-controls>
+            </div>
+          </ion-row>
         </ion-grid>
-      </div>
+      </div> -->
+      <iterate-paginated-grid opcionesInput={{opcionesInputeadas}}></iterate-paginated-grid>
     </ion-content>
+    <!-- Fila con Ayuda y botón de Inicio -->
+    <footer-ayuda-home></footer-ayuda-home>
   </ion-app>
 </body>

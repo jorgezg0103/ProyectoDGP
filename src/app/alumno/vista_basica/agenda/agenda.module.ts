@@ -14,6 +14,7 @@ import { AgendaPageRoutingModule } from './agenda-routing.module';
 import { AgendaPage } from './agenda.page';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AgendaPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [AgendaPage]
+  declarations: [AgendaPage,FooterAyudaHomeComponent]
 })
 export class AgendaPageModule {}

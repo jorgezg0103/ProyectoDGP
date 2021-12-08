@@ -1,3 +1,28 @@
-<p>
-  iterate-paginated-grid works!
-</p>
+<div id="container">
+  <ion-grid>
+    <!-- Fila con 1 y 2 plato-->
+    <ion-row>
+
+      <ion-col col-auto *ngFor="let opcion of opcionesInput| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
+          <ion-card [routerLink]="opcion.to">
+            <img src="{{opcion.imageURL}}"/>
+            <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
+          </ion-card>
+      </ion-col>
+      <!-- <ion-col col-auto *ngFor="let opcion of opciones">
+        <h1>{{opcion}}</h1>
+      </ion-col> -->
+    </ion-row>
+
+    <ion-row>
+      <div class="paginacion" id="paginacion">
+        <pagination-controls
+          (pageChange)="pagina_actual = $event"
+          previousLabel=""
+          nextLabel=""
+          maxSize=""
+        ></pagination-controls>
+      </div>
+    </ion-row>
+  </ion-grid>
+</div>

@@ -13,15 +13,15 @@ import { PaginationSizeBasedService } from '../../../services/pagination-size-ba
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  pagina_actual: number = 1;
-  itemsPerPage: number =2;
+  // pagina_actual: number = 1;
+  // itemsPerPage: number =2;
 
   primerPlatoURL: string;
   segundoPlatoURL: string;
   postreURL: string;
   ayudaURL: string;
   homeURL:string;
-
+  private opcionesInputeadas;
   private opciones = [
     {
       id:'1',
@@ -42,12 +42,14 @@ export class MenuPage implements OnInit {
       imageURL:''
     }
 ]
+// private hola:string[]=["hola","adios"];
   constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService) {
     this.getUrls();
+    this.opcionesInputeadas=JSON.stringify(this.opciones);
   }
 
   ngOnInit() {
-    this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
+    // this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
 
   }
 

@@ -14,7 +14,7 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 import { MenuPage } from './menu.page';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
-
+import { IteratePaginatedGridComponent } from '../../../components/iterate-paginated-grid/iterate-paginated-grid.component';
 
 @NgModule({
   imports: [
@@ -24,6 +24,6 @@ import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/
     MenuPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [MenuPage, FooterAyudaHomeComponent]
+  declarations: [MenuPage, FooterAyudaHomeComponent, IteratePaginatedGridComponent]
 })
 export class MenuPageModule {}
