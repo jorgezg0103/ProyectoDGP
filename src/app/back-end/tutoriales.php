@@ -14,7 +14,7 @@ function modificarTutorial(){
 }
 
 function eliminarTutorial(){
-
+echo "aaaaaaaaaaaaaaaaaaaa";
 }
 
 function leerTutorial($idTutorial){
