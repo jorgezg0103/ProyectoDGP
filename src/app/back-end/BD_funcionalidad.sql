@@ -4,32 +4,19 @@
 --Define el scrip sql encargado de crear las tablas pertinentes
 
 CREATE TABLE alumno(
-    user VARCHAR(20) PRIMARY KEY,
+    usuario VARCHAR(20) PRIMARY KEY,
     nombre VARCHAR(20),
     apellidos VARCHAR(40),
     discapacidad VARCHAR (20)
 );
 
 CREATE TABLE profesor (
-    user VARCHAR(20) PRIMARY KEY,
+    usuario VARCHAR(20) PRIMARY KEY,
     dni VARCHAR(10),
     nombre VARCHAR(20),
     apellidos VARCHAR(40),
     email VARCHAR
-    usuario VARCHAR2(20) PRIMARY KEY,
-    nombre VARCHAR2(20),
-    apellidos VARCHAR2(40),
-    discapacidad VARCHAR2 (20)
 );
-
-CREATE TABLE profesor (
-    usuario VARCHAR2(20) PRIMARY KEY,
-    dni VARCHAR2(10),
-    nombre VARCHAR2(20),
-    apellidos VARCHAR2(40),
-    email VARCHAR2
-);
-
 
 
 CREATE TABLE tarea (
@@ -38,8 +25,7 @@ CREATE TABLE tarea (
 );
 
 CREATE TABLE responsable(
-    user VARCHAR (20),
-    usuario VARCHAR(20),
+    usuario VARCHAR (20),
     idTarea INTEGER,
     fecha DATE,
 
