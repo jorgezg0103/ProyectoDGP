@@ -1,6 +1,6 @@
 //Nombre de archivo:menu.module.ts
 //Fichero encargado de agrupar todos los modulos utilizados en la página
-//Autor: Alejandro Soriano Morante
+//Autor: Laura Ortiz González, Jorge Zamudio Gutiérrez, Alejandro Soriano Morante
 //Define una  agrupacion de todos los modulos a usar
 
 import { NgModule } from '@angular/core';
@@ -14,6 +14,9 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 import { MenuPage } from './menu.page';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+import { IteratePaginatedGridComponent } from '../../../components/iterate-paginated-grid/iterate-paginated-grid.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +25,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MenuPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, FooterAyudaHomeComponent, IteratePaginatedGridComponent]
 })
 export class MenuPageModule {}
