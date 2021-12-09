@@ -9,6 +9,11 @@ contraseña: dgphelloworld
 base de datos: AVzOphS8yY
 contraseña: BJojxLnXQN
 
+
+Base de datos de prueba
+Usuario: pHHWLMHc4L
+Contraseña: gRGT6SwYzX
+
 https://paiza.io
 
 Libreria para calendario. Desde terminal en la carpeta del proyecto, ejecutar:

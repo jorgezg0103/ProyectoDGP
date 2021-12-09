@@ -14,52 +14,9 @@
     </ion-header>
 
     <ion-content fullscreen>
-
-      <div id="container">
-        <ion-grid>
-
-          <!-- Fila con menu y tutoriales  -->
-          <div class="filas">
-          <ion-row >
-            <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
-                <ion-card [routerLink]="opcion.to">
-                  <img src="{{opcion.imageURL}}"/>
-                  <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
-                </ion-card>
-            </ion-col>
-          </ion-row>
-          </div>
-        </ion-grid>
-        <div class="paginacion" id="paginacion">
-          <pagination-controls
-            (pageChange)="pagina_actual = $event"
-            previousLabel=""
-            nextLabel=""
-            maxSize=""
-          ></pagination-controls>
-        </div>
-        </div>
-      </ion-content>
-      <ion-footer class="ion-no-border">
-        <ion-toolbar>
-          <!-- <h1></h1> -->
-
-          <!-- Fila con Ayuda  -->
-        <div class="ayuda">
-
-          <ion-grid>
-          <ion-row size>
-            <ion-col col-auto>
-              <ion-card>
-                <img src= "{{ayudaURL}}"/>
-                <ion-card-title><strong>AYUDA</strong></ion-card-title>
-              </ion-card>
-            </ion-col>
-            <ion-col></ion-col>
-          </ion-row>
-          </ion-grid>
-        </div>
-      </ion-toolbar>
-    </ion-footer>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
+    </ion-content>
+    <!-- Fila con Ayuda y botón de Inicio -->
+    <footer-ayuda-home></footer-ayuda-home>
   </ion-app>
 </body>

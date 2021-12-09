@@ -61,7 +61,11 @@ export class AniadirComandaPage implements OnInit {
     this.opciones[2].imageURL=this.postreURL;
   }
   pulsarBoton(){
-    this.comandaService.aniadirComanda('Antonio','https://cdn-icons-png.flaticon.com/512/119/119647.png');
-    this.router.navigateByUrl('/alumno/comanda');
+    if(!this.comandaService.aniadirComanda('Antonio','https://cdn-icons-png.flaticon.com/512/119/119647.png')){
+      document.getElementById('ComandasNoSelect').style.display='block';
+    } else{
+      this.router.navigateByUrl('/alumno/comanda');
+    }
+
   }
 }

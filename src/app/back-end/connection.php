@@ -27,7 +27,23 @@
             $dbhost = 'remotemysql.com:3306';
             $dbuser = 'AVzOphS8yY';
             $dbpass = 'BJojxLnXQN';
-            $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+            $dbname = 'AVzOphS8yY';
+            $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+                  
+            if (!$conn) {
+               die("Connection failed: " . mysqli_connect_error());
+            }
+            else {
+               return $conn;
+            }
+         }
+
+         function createConnectionPruebas(){
+            $dbhost = 'remotemysql.com:3306';
+            $dbuser = 'pHHWLMHc4L';
+            $dbpass = 'gRGT6SwYzX';
+            $dbname = 'pHHWLMHc4L';
+            $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
                   
             if (!$conn) {
                die("Connection failed: " . mysqli_connect_error());
