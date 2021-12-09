@@ -12,6 +12,9 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+import { IteratePaginatedGridComponent } from '../../../components/iterate-paginated-grid/iterate-paginated-grid.component';
+
 
 
 @NgModule({
@@ -22,6 +25,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomePageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,FooterAyudaHomeComponent, IteratePaginatedGridComponent]
 })
 export class HomePageModule {}
