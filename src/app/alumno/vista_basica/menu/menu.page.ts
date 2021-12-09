@@ -5,7 +5,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import {ImageUrlService} from '../../../services/image-url.service'
-import { PaginationSizeBasedService } from '../../../services/pagination-size-based.service'
 
 @Component({
   selector: 'app-menu',
@@ -16,8 +15,6 @@ export class MenuPage implements OnInit {
   primerPlatoURL: string;
   segundoPlatoURL: string;
   postreURL: string;
-  ayudaURL: string;
-  homeURL:string;
   private opcionesInputeadas;
   private opciones = [
     {
@@ -39,7 +36,7 @@ export class MenuPage implements OnInit {
       imageURL:''
     }
 ]
-  constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService) {
+  constructor(private urlService:ImageUrlService) {
     this.getUrls();
     this.opcionesInputeadas=JSON.stringify(this.opciones);
   }
@@ -51,9 +48,6 @@ export class MenuPage implements OnInit {
     this.primerPlatoURL=this.urlService.getUrl(7219,'true',this.urlService.naranja);
     this.segundoPlatoURL=this.urlService.getUrl(7240,'true',this.urlService.naranja);
     this.postreURL=this.urlService.getUrl(7216,'true',this.urlService.naranja);
-
-    this.ayudaURL=this.urlService.getAyudaURL(this.urlService.morado);
-    this.homeURL=this.urlService.getHomeURL('true',this.urlService.blanco);
 
     this.opciones[0].imageURL=this.primerPlatoURL;
     this.opciones[1].imageURL=this.segundoPlatoURL;
