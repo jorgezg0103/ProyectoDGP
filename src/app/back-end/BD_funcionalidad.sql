@@ -38,6 +38,7 @@ CREATE TABLE responsable(
 CREATE TABLE tutoriales (
     idTutorial INTEGER PRIMARY KEY,
     tipo VARCHAR2,
+    nombre VARCHAR2,
     recurso TEXT
 );
 
