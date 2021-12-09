@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PostrePageRoutingModule } from './postre-routing.module';
 
 import { PostrePage } from './postre.page';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PostrePageRoutingModule
+    PostrePageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [PostrePage]
 })

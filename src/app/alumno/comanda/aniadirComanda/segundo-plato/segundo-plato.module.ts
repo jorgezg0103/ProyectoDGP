@@ -8,12 +8,15 @@ import { SegundoPlatoPageRoutingModule } from './segundo-plato-routing.module';
 
 import { SegundoPlatoPage } from './segundo-plato.page';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SegundoPlatoPageRoutingModule
+    SegundoPlatoPageRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [SegundoPlatoPage]
 })

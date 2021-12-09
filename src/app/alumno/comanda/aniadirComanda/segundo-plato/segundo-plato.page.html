@@ -6,4 +6,55 @@
 
 <ion-content>
 
+  <div id="container">
+    <ion-grid>
+
+
+      <!-- Fila con 1 y 2 plato-->
+      <ion-row>
+
+        <ion-col col-auto *ngFor="let opcion of opciones| paginate: { itemsPerPage: itemsPerPage, currentPage: pagina_actual }">
+            <ion-card (click)="seleccionarSegundo(opcion.id)">
+              <img src="{{opcion.imageURL}}"/>
+              <ion-card-title><strong>{{opcion.nombre}}</strong></ion-card-title>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <div class="paginacion" id="paginacion">
+        <pagination-controls
+          (pageChange)="pagina_actual = $event"
+          previousLabel=""
+          nextLabel=""
+          maxSize=""
+        ></pagination-controls>
+      </div>
+
+      <!-- Fila con Ayuda y botón de Inicio -->
+      <ion-row>
+
+        <ion-col size="6">
+          <ion-card>
+            <img src="{{ ayudaURL }}"/>
+            <ion-card-header>
+              <ion-card-title>AYUDA</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card [routerLink]="['../home']">
+            <img src= "{{ homeURL }}"/>
+            <ion-card-header>
+              <ion-card-title>INICIO</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+
+
+
+    </ion-grid>
+  </div>
 </ion-content>
