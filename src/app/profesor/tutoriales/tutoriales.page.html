@@ -5,6 +5,9 @@
 
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Tutoriales Profesor</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -72,15 +75,7 @@
         </ion-card>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-card [routerLink]="['../home']">
-          <ion-card-header>
-            <ion-card-title>Inicio</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+
 
   </ion-grid>
 </ion-content>

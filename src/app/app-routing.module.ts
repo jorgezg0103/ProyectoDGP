@@ -67,8 +67,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'profesor/select',
+    loadChildren: () => import('./profesor/select/select.module').then( m => m.SelectPageModule)
+  },
+  {
     path: 'profesor/inicio',
     loadChildren: () => import('./profesor/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'profesor/register',
+    loadChildren: () => import('./profesor/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'profesor/home',

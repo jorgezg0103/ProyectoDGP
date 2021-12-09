@@ -1,0 +1,55 @@
+//Nombre de archivo:inicio.page.scss
+//Fichero encargado del estilo de la página web
+//Autor: Alejandro Soriano Morante
+//Define el estilo de los distintos contenidos de la página web
+
+#container {
+    text-align: center;
+    margin : auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  img{
+    height: 50px;
+    width: 50px;
+  }
+
+  .center{
+    margin: auto;
+  }
+  
+  ion-card-title{
+    font-size: 15px;
+  }
+  
+  // ion-row{
+  //   margin-bottom: -5%; 
+  // }
+  
+  ion-title {
+    font-size: 25px;
+  }
+
+  ion-content {
+    --overflow: show;
+  }
