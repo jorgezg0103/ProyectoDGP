@@ -3,7 +3,7 @@
 <!--Autor: Alejandro Soriano Morante-->
 <!--Se va a definir las diferentes cards de ionic que ejecutarán las funcionalidades deseadas por parte de la página web del incio y registro por parte profesor-->
 
-<ion-header>
+<!--<ion-header>
     <ion-toolbar>
       <ion-title>Inicio de Sesión de Profesor</ion-title>
     </ion-toolbar>
@@ -121,3 +121,36 @@
       </ion-grid>
     </div>
   </ion-content>
+
+-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión de profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block" [routerLink]="['../home']">Iniciar Sesión</ion-button>
+        <a [routerLink]="['../register']" class="small-text">Registrarse</a>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
