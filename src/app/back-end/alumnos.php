@@ -50,7 +50,7 @@ function listaAlumnos(){
     if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nUser: " . $row["user"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        $lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
     }
     } else {
     echo "0 results";
@@ -63,7 +63,7 @@ function listaAlumnos(){
 
 function leerAlumno($usuario){
     $conn = createConnection();
-    $sql = "SELECT * FROM alumno WHERE user='$usuario'";
+    $sql = "SELECT * FROM alumno WHERE usuario='$usuario'";
     $salida = "";
     if (mysqli_query($conn, $sql)){
         $salida = "Insertado con exito";

@@ -4,14 +4,14 @@
 --Define el scrip sql encargado de crear las tablas pertinentes
 
 CREATE TABLE alumno(
-    user VARCHAR2(20) PRIMARY KEY,
+    usuario VARCHAR2(20) PRIMARY KEY,
     nombre VARCHAR2(20),
     apellidos VARCHAR2(40),
     discapacidad VARCHAR2 (20)
 );
 
 CREATE TABLE profesor (
-    user VARCHAR2(20) PRIMARY KEY,
+    usuario VARCHAR2(20) PRIMARY KEY,
     dni VARCHAR2(10),
     nombre VARCHAR2(20),
     apellidos VARCHAR2(40),
@@ -26,18 +26,19 @@ CREATE TABLE tarea (
 );
 
 CREATE TABLE responsable(
-    user VARCHAR2,
+    usuario VARCHAR2,
     idTarea INTEGER,
     fecha DATE,
 
     PRIMARY KEY (idTarea, fecha)
-    FOREIGN KEY user REFERENCES alumno (user),
+    FOREIGN KEY usuario REFERENCES alumno (usuario),
     FOREIGN KEY idTarea REFERENCES tarea (idTarea)
 );
 
 CREATE TABLE tutoriales (
     idTutorial INTEGER PRIMARY KEY,
     tipo VARCHAR2,
+    nombre VARCHAR2,
     recurso TEXT
 );
 
