@@ -1,6 +1,6 @@
 //Nombre de archivo:home.module.ts
 //Fichero encargado de agrupar todos los modulos utilizados en la página
-//Autor: Jesús López Rodríguez
+//Autor: Jesús López Rodríguez, Laura Ortiz González, Jorge Zamudio Gutiérrez
 //Define una  agrupacion de todos los modulos a usar
 
 import { NgModule } from '@angular/core';
@@ -13,6 +13,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+import { IteratePaginatedGridComponent } from '../../../components/iterate-paginated-grid/iterate-paginated-grid.component';
 
 @NgModule({
   imports: [
@@ -22,6 +24,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomePageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, FooterAyudaHomeComponent, IteratePaginatedGridComponent]
 })
 export class HomePageModule {}

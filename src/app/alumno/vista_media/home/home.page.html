@@ -8,82 +8,18 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>
-          Inicio Vista Alumno Media
+          Inicio Vista Alumno Basica
         </ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content fullscreen>
-    
-      <div id="container">
-        <ion-grid>
-
-          <!-- Fila con menu y tutoriales  -->
-          <ion-row>
-
-            <ion-col>
-                <ion-card [routerLink]="['../menu']">
-                  <img src="assets/pictograms/fondo/menu.png" />
-                  <ion-card-header>
-                    <ion-card-title>Menú</ion-card-title>
-                  </ion-card-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col>
-              <ion-card [routerLink]="['../tutoriales']">
-                <img src="assets/pictograms/borde/tutoriales.png" />
-                <ion-card-header>
-                  <ion-card-title>Tutorial</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-
-          </ion-row>
-          
-          <!-- Fila con agenda  -->
-          <ion-row>
-            
-            <!--<ion-col></ion-col>-->
-    
-            <ion-col>
-    
-              <ion-card [routerLink]="['../agenda']">
-                <img src="assets/pictograms/fondo/agenda.png"/>
-                <ion-card-header>
-                  <ion-card-title>Agenda</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-    
-            </ion-col>
-    
-            <!--<ion-col></ion-col>-->
-    
-          </ion-row>
-    
-          <!-- Fila con Ayuda  -->
-          <ion-row size>
-            
-            <ion-col>
-              <ion-card>
-                <img src= "assets/pictograms/fondo/necesito_ayuda.png"/>
-                <ion-card-header>
-                  <ion-card-title>Ayuda</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-    
-            <ion-col></ion-col>    
-          </ion-row>
- 
-    
-        </ion-grid>
-      </div>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
     </ion-content>
-
+    <!-- Fila con Ayuda y botón de Inicio -->
+    <footer-ayuda-home></footer-ayuda-home>
   </ion-app>
 </body>
-
 
 
 
