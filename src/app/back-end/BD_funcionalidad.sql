@@ -4,26 +4,18 @@
 --Define el scrip sql encargado de crear las tablas pertinentes
 
 CREATE TABLE alumno(
-<<<<<<< HEAD
-    user VARCHAR(20) PRIMARY KEY,
-=======
     usuario VARCHAR(20) PRIMARY KEY,
->>>>>>> d11070802911755824508b94e11df7daf6a9c567
     nombre VARCHAR(20),
     apellidos VARCHAR(40),
     discapacidad VARCHAR (20)
 );
 
 CREATE TABLE profesor (
-<<<<<<< HEAD
-    user VARCHAR(20) PRIMARY KEY,
-=======
     usuario VARCHAR(20) PRIMARY KEY,
->>>>>>> d11070802911755824508b94e11df7daf6a9c567
     dni VARCHAR(10),
     nombre VARCHAR(20),
     apellidos VARCHAR(40),
-    email VARCHAR
+    email VARCHAR (40)
 );
 
 
@@ -33,11 +25,7 @@ CREATE TABLE tarea (
 );
 
 CREATE TABLE responsable(
-<<<<<<< HEAD
-    user VARCHAR (20),
-=======
     usuario VARCHAR (20),
->>>>>>> d11070802911755824508b94e11df7daf6a9c567
     idTarea INTEGER,
     fecha DATE,
 
@@ -49,10 +37,7 @@ CREATE TABLE responsable(
 CREATE TABLE tutoriales (
     idTutorial INTEGER PRIMARY KEY,
     tipo VARCHAR (20),
-<<<<<<< HEAD
-=======
     nombre VARCHAR(20),
->>>>>>> d11070802911755824508b94e11df7daf6a9c567
     recurso TEXT
 );
 
@@ -63,12 +48,35 @@ CREATE TABLE explica (
     PRIMARY KEY (idTarea, idTutorial),
     FOREIGN KEY idTarea REFERENCES  tarea(idTarea),
     FOREIGN KEY idTutorial REFERENCES tutoriales(idTutorial)
+);
 
-<<<<<<< HEAD
-    PRIMARY KEY (idTarea, idTutorial),
-    FOREIGN KEY idTarea REFERENCES  tarea(idTarea),
-    FOREIGN KEY idTutorial REFERENCES tutoriales(idTutorial)
 
-=======
->>>>>>> d11070802911755824508b94e11df7daf6a9c567
+CREATE TABLE primerPlato(
+    idPrimero INTEGER PRIMARY KEY,
+    nombre VARCHAR (20)
+);
+
+CREATE TABLE segundoPlato(
+    idSegundo INTEGER PRIMARY KEY,
+    nombre VARCHAR (20)
+);
+
+CREATE TABLE postre(
+    idPostre INTEGER PRIMARY KEY,
+    nombre VARCHAR (20)
+);
+
+
+
+CREATE TABLE comanda(
+    usuario VARCHAR (20),
+    primero INTEGER,
+    segundo INTEGER,
+    postre INTEGER,
+    idComanda INTEGER AUTO_INCREMENT,
+    PRIMARY KEY (idComanda),
+    FOREIGN KEY usuario REFERENCES alumno(usuario),
+    FOREIGN KEY primero REFERENCES primerPlato(idPrimero),
+    FOREIGN KEY segundo REFERENCES segundoPlato(idSegundo),
+    FOREIGN KEY postre REFERENCES postre(idPostre)
 );
