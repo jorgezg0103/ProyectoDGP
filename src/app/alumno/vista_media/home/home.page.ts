@@ -1,6 +1,6 @@
 //Nombre de archivo:home.page.ts
 //Fichero encargado de dirigir el routing hacia la página principal o al fichero de estilo
-//Autor: Jesús López Rodríguez
+//Autor: Jesús López Rodríguez, Laura Ortiz González, Jorge Zamudio Gutiérrez
 //Define el modulo de los principales componentes de la página web
 
 import { Component } from '@angular/core';
