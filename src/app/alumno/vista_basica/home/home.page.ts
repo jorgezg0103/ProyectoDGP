@@ -14,12 +14,11 @@ import { PaginationSizeBasedService } from '../../../services/pagination-size-ba
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  pagina_actual: number = 1;
-  itemsPerPage: number =2;
   menuURL: string;
   agendaURL: string;
   ayudaURL: string;
 
+  private opcionesInputeadas;
   private opciones = [
     {
       id:'1',
@@ -38,10 +37,10 @@ export class HomePage implements OnInit {
 
   constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService)  {
     this.getUrls();
+    this.opcionesInputeadas=JSON.stringify(this.opciones);
   }
 
   ngOnInit(){
-    this.itemsPerPage=this.paginationManager.adjustPagination(this.opciones.length);
   }
   getUrls() {
     this.menuURL=this.urlService.getUrl(32514,'true',this.urlService.naranja);
