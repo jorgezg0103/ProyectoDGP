@@ -18,6 +18,7 @@ function eliminarTutorial(){
 }
 
 function leerTutorial($idTutorial){
+    $conn = createConnection();
     $sql = "SELECT * FROM tutoriales WHERE idTutorial='".$idTutorial."'";
     $salida = "";
     $result = mysqli_query($conn, $sql);
@@ -46,6 +47,7 @@ function leerTutorial($idTutorial){
 }
 
 function listaTutoriales(){
+    $conn = createConnection();
     $sql = "SELECT * FROM tutoriales";
     $salida = "";
     $result = mysqli_query($conn, $sql);
