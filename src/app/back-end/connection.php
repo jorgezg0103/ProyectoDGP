@@ -29,6 +29,7 @@
             $dbpass = 'BJojxLnXQN';
             $dbname = 'AVzOphS8yY';
             $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+            //mysqli_autocommit($conn, FALSE);
                   
             if (!$conn) {
                die("Connection failed: " . mysqli_connect_error());
