@@ -11,11 +11,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserModule, NgxPaginationModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
-
+    declarations: [AppComponent],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserModule, NgxPaginationModule],
+    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
