@@ -5,8 +5,17 @@
 
 <?php
 require 'connection.php';
-function insertarTutorial(){
-
+function insertarTutorial($idTutorial, $tipo, $nombre, $recurso){
+    $conn = createConnection();
+    $sql = "INSERT INTO tutoriales
+    VALUES ($idtutorial, '$tipo', '$nombre', '$recurso')";
+    
+    if (mysqli_query($conn, $sql)) {
+      echo "New record created successfully";
+      //mysqli_commit($conn);
+    } else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }  
 }
 
 function modificarTutorial(){
