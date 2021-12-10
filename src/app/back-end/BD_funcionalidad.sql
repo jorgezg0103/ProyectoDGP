@@ -80,3 +80,8 @@ CREATE TABLE comanda(
     FOREIGN KEY segundo REFERENCES segundoPlato(idSegundo),
     FOREIGN KEY postre REFERENCES postre(idPostre)
 );
+
+CREATE TABLE images(
+    idImage INTEGER,
+    titulo VARCHAR(20)
+);
