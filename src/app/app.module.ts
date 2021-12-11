@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserModule, NgxPaginationModule],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, BrowserModule, NgxPaginationModule, HttpClientModule],
     providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
     bootstrap: [AppComponent]
 })

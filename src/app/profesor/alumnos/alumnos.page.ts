@@ -5,14 +5,25 @@
 
 import { Component, OnInit } from '@angular/core';
 
+import { NavController } from '@ionic/angular';
+import { HttpClient } from "@angular/common/http";
+
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.page.html',
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
+  listado;
 
-  constructor() { }
+  constructor(public navCtrl: NavController, private http:HttpClient) {
+    
+    this.http.get("http://localhost/alumnos.php?opcion=1").subscribe(snap => {
+      console.log(snap);
+      this.listado = snap;
+    });
+    
+  }
 
   ngOnInit() {
   }

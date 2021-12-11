@@ -1,13 +1,10 @@
-<!--Nombre del archivo: connection.php-->
-<!--Fichero encargado de comprobar la conexion con la BD-->
-<!--Autor: Jesús López Rodríguez-->
-<!--Se definen las funciones necesarias en php-->
-<!--<html>
-   <head>
-      <title>Connecting MySQL Server</title>
-   </head>
-   <body>
-      <?php
+<?php
+//Nombre del archivo: connection.php-->
+//Fichero encargado de comprobar la conexion con la BD-->
+//Autor: Jesús López Rodríguez-->
+//Se definen las funciones necesarias en php-->
+
+
          /*
          $dbhost = 'remotemysql.com:3306';
          $dbuser = 'AVzOphS8yY';
@@ -57,6 +54,4 @@
          function closeConnection($conn){
             mysqli_close($conn);
          }
-      ?>
-   </body>
-</html>-->
+?>
