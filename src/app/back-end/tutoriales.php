@@ -1,14 +1,14 @@
-<!--Nombre del archivo: tutoriales.php-->
-<!--Fichero encargado de la gestión del almacenamiento de los tutoriales-->
-<!--Autor: Jesús López Rodríguez-->
-<!--Se definen las funciones necesarias en php-->
-
 <?php
+//Nombre del archivo: tutoriales.php
+//Fichero encargado de la gestión del almacenamiento de los tutoriales
+//Autor: Jesús López Rodríguez-->
+//Se definen las funciones necesarias en php
+
 require 'connection.php';
 function insertarTutorial($idTutorial, $tipo, $nombre, $recurso){
     $conn = createConnection();
     $sql = "INSERT INTO tutoriales
-    VALUES ($idtutorial, '$tipo', '$nombre', '$recurso')";
+    VALUES ($idTutorial, '$tipo', '$nombre', '$recurso')";
     
     if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";

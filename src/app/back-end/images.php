@@ -1,4 +1,9 @@
 <?php
+//Nombre del archivo: images.php
+//Fichero encargado de la gestión del almacenamiento de las imagenes
+//Autor: Jesús López Rodríguez-->
+//Se definen las funciones necesarias en php
+
 require 'connection.php';
 function insertarImagen($idImagen, $titulo){
     $conn = createConnection();
