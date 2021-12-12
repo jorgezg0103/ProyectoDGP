@@ -4,11 +4,11 @@ import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'app-aniadir_tutoriales',
-  templateUrl: './aniadir_tutoriales.page.html',
-  styleUrls: ['./aniadir_tutoriales.page.scss'],
+  selector: 'app-aniadir_tutorial',
+  templateUrl: './aniadir_tutorial.page.html',
+  styleUrls: ['./aniadir_tutorial.page.scss'],
 })
-export class Lista_tutorialesPage implements OnInit {
+export class Aniadir_tutorialPage implements OnInit {
  
   constructor() {   
   }
