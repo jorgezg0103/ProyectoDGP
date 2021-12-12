@@ -125,7 +125,7 @@ function leerSegundoPlato($idPlato){
     return $lectura;
 }
 
-function insertarPostrePlato(){
+function insertarPostre(){
 
 }
 
