@@ -20,7 +20,7 @@ export class SeleccionPerfilPage implements OnInit {
       id: '2',
       nombre: 'Profesor',
       tipo: 'profesor',
-      to: '/profesor/inicio',
+      to: '/profesor/select',
       imageURL: 'https://cdn-icons-png.flaticon.com/512/2321/2321041.png',
     },
     {

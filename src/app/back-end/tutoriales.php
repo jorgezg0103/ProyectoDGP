@@ -4,6 +4,8 @@
 //Autor: Jesús López Rodríguez-->
 //Se definen las funciones necesarias en php
 
+Header('Access-Control-Allow-Origin: *');
+
 require 'connection.php';
 function insertarTutorial($idTutorial, $tipo, $nombre, $recurso){
     $conn = createConnection();
@@ -56,7 +58,7 @@ function leerTutorial($idTutorial){
 }
 
 function listaTutoriales(){
-    $conn = createConnection();
+   /* $conn = createConnection();
     $sql = "SELECT * FROM tutoriales";
     $salida = "";
     $result = mysqli_query($conn, $sql);
@@ -81,7 +83,44 @@ function listaTutoriales(){
 
     closeConnection($conn);
     echo $salida;
+    return $lectura;*/
+    $conn = createConnection();
+    $sql = "SELECT * FROM tutoriales";
+    $salida = "";
+    $result = mysqli_query($conn, $sql);
+    $lectura = "";
+    /*if (mysqli_query($conn, $sql)){
+        echo "\nDentro if";
+        $salida = "\nLeido con exito";
+    }
+    else {
+        echo "Dentro else";
+        $salida = "Error al insertar";
+    }*/
+
+    if (mysqli_num_rows($result) > 0) {
+    $array = array();
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        $array[] = array_map('utf8_encode', $row);
+        //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+    }
+    $lectura = json_encode($array, JSON_NUMERIC_CHECK);
+    } else {
+    echo "0 results";
+    }
+
+    closeConnection($conn);
+    echo $salida;
     return $lectura;
+}
+
+$opcion = $_GET["opcion"];
+
+switch ($opcion) {
+  case '1':
+    echo listaTutoriales();
+    break;
 }
 
 ?>

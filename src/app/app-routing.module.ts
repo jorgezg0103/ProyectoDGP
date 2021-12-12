@@ -99,6 +99,10 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },
   {
+    path: 'profesor/lista_tutoriales',
+    loadChildren: () => import('./profesor/lista_tutoriales/lista_tutoriales.module').then( m => m.Lista_tutorialesPageModule)
+  },
+  {
     path: 'profesor/alumnos',
     loadChildren: () => import('./profesor/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
