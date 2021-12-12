@@ -6,12 +6,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { Aniadir_tutorialesPage } from './aniadir_tutoriales.page';
+import { Aniadir_tutorialPage } from './aniadir_tutorial.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: Aniadir_tutorialesPage
+    component: Aniadir_tutorialPage
   }
 ];
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class Aniadir_tutorialesPageRoutingModule {}
+export class Aniadir_tutorialPageRoutingModule {}

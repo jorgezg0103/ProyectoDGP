@@ -9,17 +9,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Aniadir_tutorialesPageRoutingModule } from './aniadir_tutoriales-routing.module';
+import { Aniadir_tutorialPageRoutingModule } from './aniadir_tutorial-routing.module';
 
-import { Aniadir_tutorialesPage } from './aniadir_tutoriales.page';
+import { Aniadir_tutorialPage } from './aniadir_tutorial.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Aniadir_tutorialesPageRoutingModule
+    Aniadir_tutorialPageRoutingModule
   ],
-  declarations: [Aniadir_tutorialesPage]
+  declarations: [Aniadir_tutorialPage]
 })
-export class Aniadir_tutorialesPageModule {}
+export class Aniadir_tutorialPageModule {}
