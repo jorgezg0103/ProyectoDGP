@@ -1,0 +1,14 @@
+Fichero que sirve como guión para la instalación de un servidor php en local
+Autor: José Melguizo Ruano
+Pasos y órdenes para realizar la instalación
+
+sudo apt update
+sudo apt install apache2
+sudo ufw allow in "Apache"
+sudo ufw enable
+
+sudo apt install php libapache2-mod-php php-mysql
+
+
+cd ./ProyectoDGP/src/app/back-end/
+sudo cp * /var/www/html/

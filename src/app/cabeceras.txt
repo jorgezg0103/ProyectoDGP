@@ -46,7 +46,7 @@ Define los distintos tipos de archivos y comentarios
 --Define el scrip sql encargado de crear las tablas pertinentes
 
 *file.php*
-<!--Nombre del archivo: *.php-->
-<!--Fichero encargado de comprobar la conexion con la BD-->
-<!--Autor: Jesús López Rodríguez-->
-<!--Se definen las funciones necesarias en php-->
+//Nombre del archivo: *.php
+//Fichero encargado de comprobar la conexion con la BD
+//Autor: Jesús López Rodríguez
+//Se definen las funciones necesarias en php
