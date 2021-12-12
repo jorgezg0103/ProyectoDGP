@@ -103,6 +103,10 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/lista_tutoriales/lista_tutoriales.module').then( m => m.Lista_tutorialesPageModule)
   },
   {
+    path: 'profesor/aniadir_tutorial',
+    loadChildren: () => import('./profesor/aniadir_tutorial/aniadir_tutorial.module').then( m => m.Aniadir_tutorialPageModule)
+  },
+  {
     path: 'profesor/alumnos',
     loadChildren: () => import('./profesor/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
