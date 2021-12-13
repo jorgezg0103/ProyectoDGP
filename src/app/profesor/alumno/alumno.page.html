@@ -1,0 +1,29 @@
+<!--Nombre del archivo: alumno.page.html-->
+<!--Fichero encargado de la creación de la página web para la funcionalidad de las tareas de un alumno en la vista de profesor-->
+<!--Autor: Jose Melguizo Ruano-->
+<!--Se va a definir las diferentes cards de ionic que nos mandarán a las disintas funcionalidades de la aplicación del profesor-->
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ id }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+
+
+    <ion-row ion-item *ngFor="let item of listado">
+      <ion-col>
+        <ion-card >
+            <ion-card-header>
+              <ion-card-content>{{ item.descripcion }}</ion-card-content>
+            </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
