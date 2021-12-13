@@ -5,6 +5,7 @@
 //Se definen las funciones necesarias en php
 
 Header('Access-Control-Allow-Origin: *');
+Header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 require 'connection.php';
 function insertarTutorial($idTutorial, $tipo, $nombre, $recurso){
@@ -118,7 +119,7 @@ switch ($opcion) {
     $tipo = utf8_decode($_POST["tipo"]);
     $nombre = utf8_decode($_POST["nombre"]);
     $recurso = utf8_decode($_POST["recurso"]);
-    echo insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
+    insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
     break;  
 }
 
