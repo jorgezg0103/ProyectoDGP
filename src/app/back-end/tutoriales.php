@@ -118,7 +118,7 @@ switch ($opcion) {
     $tipo = utf8_decode($_POST["tipo"]);
     $nombre = utf8_decode($_POST["nombre"]);
     $recurso = utf8_decode($_POST["recurso"]);
-    insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
+    echo insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
     break;  
 }
 
