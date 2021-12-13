@@ -14,38 +14,37 @@
   
   <ion-content>
     <h2>Añadir tutorial</h2>
-    <form (ngSubmit)="aniadir_tutorial()" #formTutorial="ngForm">
+    <form #formTutorial="ngForm">
         <p>
-
-            <mat-form-field>
-                <input matInput name="idTutorial" [(ngModel)]="tutorial.idTutorial"
+            <ion-item>
+                <input name="idTutorial" [(ngModel)]="tutorial.idTutorial"
                     type="number"
                     placeholder="idTutorial">
-            </mat-form-field>
+            </ion-item>
         </p>
         <p>
-            <mat-form-field>
-                <input matInput name="tipo" [(ngModel)]="tutorial.tipo"
+            <ion-item>
+                <input name="tipo" [(ngModel)]="tutorial.tipo"
                     type="text"
                     placeholder="tipo">
-            </mat-form-field>
+            </ion-item>
         </p>
         <p>
-            <mat-form-field>
-                <input matInput name="nombre" [(ngModel)]="tutorial.nombre"
+            <ion-item>
+                <input name="nombre" [(ngModel)]="tutorial.nombre"
                     type="text"
                     placeholder="nombre">
-            </mat-form-field>
+            </ion-item>
         </p>
         <p>
-          <mat-form-field>
-              <input matInput name="recurso" [(ngModel)]="tutorial.recurso"
+          <ion-item>
+              <input name="recurso" [(ngModel)]="tutorial.recurso"
                   type="text"
                   placeholder="recurso">
-          </mat-form-field>
+          </ion-item>
       </p>
         <p>
-            <button type="submit" mat-flat-button color="accent">Añadir tutorial</button>
+          <ion-button type="submit" color="success" expand="block" (click)="aniadir_tutorial()">Añadir</ion-button>        
         </p>
     </form>
 <!--

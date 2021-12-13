@@ -12,14 +12,14 @@ export class Aniadir_tutorialPage implements OnInit {
   
   tutorial = new Tutorial(undefined,"","",undefined);
 
-  constructor() {   
+  constructor(public navCtrl: NavController, private http:HttpClient) {   
   }
 
   ngOnInit() {
   }
 
-  aniadir_tutorial(){
-
+  public aniadir_tutorial(){
+    this.http.post("http://localhost/tutoriales.php?opcion=2", this.tutorial);  
   }
 
 }
