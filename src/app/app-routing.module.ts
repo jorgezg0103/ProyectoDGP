@@ -115,7 +115,10 @@ const routes: Routes = [
     loadChildren: () => import('./alumno/comanda/comanda.module').then( m => m.ComandaPageModule)
   },
 
-
+  {
+    path: 'profesor/alumno/:id',
+    loadChildren: () => import('./profesor/alumno/alumno.module').then( m => m.AlumnoPageModule)
+  },
 
 ];
 

@@ -81,11 +81,39 @@ function leerAlumno($usuario){
     return $salida;
 }
 
+function tareasAsignadas($usuario){
+    $conn = createConnection();
+    $sql = "SELECT * FROM responsable WHERE usuario='$usuario'";
+    $result = mysqli_query($conn, $sql);
+    $lectura = "";
+
+    if (mysqli_num_rows($result) > 0) {
+      $array = array();
+
+      while($row = mysqli_fetch_assoc($result)) {
+        $tarea = $row["idTarea"];
+        $sql2 = "SELECT * FROM tarea WHERE idTarea='$tarea'";
+        $result2 = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+
+        $array[] = array_map('utf8_encode', $row2);
+      }
+
+      closeConnection($conn);
+      $lectura = json_encode($array, JSON_NUMERIC_CHECK);
+    }
+
+    return $lectura;
+}
+
 $opcion = $_GET["opcion"];
 
 switch ($opcion) {
   case '1':
     echo listaAlumnos();
+    break;
+  case '2':
+    echo tareasAsignadas($_GET["usuario"]);
     break;
 }
 

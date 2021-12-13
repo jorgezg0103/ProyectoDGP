@@ -96,7 +96,7 @@ function listaTutoriales(){
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         $array[] = array_map('utf8_encode', $row);
-        //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        //$lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"]. " Descripcion: ". $row["recurso"];
     }
     $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
