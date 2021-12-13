@@ -89,21 +89,13 @@ function listaTutoriales(){
     $salida = "";
     $result = mysqli_query($conn, $sql);
     $lectura = "";
-    /*if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
-        $salida = "\nLeido con exito";
-    }
-    else {
-        echo "Dentro else";
-        $salida = "Error al insertar";
-    }*/
 
     if (mysqli_num_rows($result) > 0) {
     $array = array();
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         $array[] = array_map('utf8_encode', $row);
-        //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        //$lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"]. " Descripcion: ". $row["recurso"];
     }
     $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
@@ -121,6 +113,13 @@ switch ($opcion) {
   case '1':
     echo listaTutoriales();
     break;
+  case '2':
+    $idTutorial = $_POST["idTutorial"];
+    $tipo = utf8_decode($_POST["tipo"]);
+    $nombre = utf8_decode($_POST["nombre"]);
+    $recurso = utf8_decode($_POST["recurso"]);
+    echo insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
+    break;  
 }
 
 ?>
