@@ -1,4 +1,11 @@
+//Nombre de archivo:home.page.ts
+//Fichero encargado de dirigir el routing hacia la página principal o al fichero de estilo
+//Autor: Laura Ortiz González, Jorge Zamudio Gutiérrez
+//Define el modulo de los principales componentes de la página web
+
 import { Component, OnInit } from '@angular/core';
+import { ImageUrlService } from 'src/app/services/image-url.service';
+import { PaginationSizeBasedService } from 'src/app/services/pagination-size-based.service';
 
 @Component({
   selector: 'app-agenda',
@@ -9,23 +16,39 @@ export class AgendaPage implements OnInit {
 
   pagina_actual: number = 1;
 
-  private tareas = [
+  microondasURL: string;
+  comandaURL: string;
+
+  private opcionesInputeadas;
+  private opciones = [
     {
       id: '1',
       nombre: 'Poner el microondas',
-      imageURL: '../../../../assets/microwave.png',
+      to:'',
+      imageURL: '',
     },
     {
       id: '2',
       nombre: 'Tomar comanda comedor',
-      imageURL: 'https://icon-library.com/images/icon-plus/icon-plus-28.jpg',
+      to:'',
+      imageURL: '',
     },
 
   ]
 
-  constructor() { }
+  constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService)  {
+    this.getUrls();
+    this.opcionesInputeadas=JSON.stringify(this.opciones);
+  }
 
-  ngOnInit() {
+  ngOnInit(){
+  }
+  getUrls() {
+    this.microondasURL=this.urlService.getUrl(2473,'true',this.urlService.naranja);
+    this.comandaURL=this.urlService.getUrl(7142,'true',this.urlService.naranja);
+
+    this.opciones[0].imageURL=this.microondasURL;
+    this.opciones[1].imageURL=this.comandaURL;
   }
 
 }

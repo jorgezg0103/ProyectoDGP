@@ -82,3 +82,16 @@ android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java
 android/gradle/wrapper/gradle-wrapper.jar
 android/gradle/wrapper/gradle-wrapper.properties
 
+android/capacitor.settings.gradle
+android/.idea/compiler.xml
+android/.idea/misc.xml
+android/app/capacitor.build.gradle
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/app/src/main/res/xml/config.xml
+android/source-map-support-9bf3c948/browser-source-map-support.js
+android/source-map-support-9bf3c948/LICENSE.md
+android/source-map-support-9bf3c948/README.md
+android/source-map-support-9bf3c948/register-hook-require.js
+android/source-map-support-9bf3c948/register.js
+android/source-map-support-9bf3c948/source-map-support.js

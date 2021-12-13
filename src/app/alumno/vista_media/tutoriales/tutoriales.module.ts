@@ -14,6 +14,10 @@ import { TutorialesPageRoutingModule } from './tutoriales-routing.module';
 import { TutorialesPage } from './tutoriales.page';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+import { IteratePaginatedGridComponent } from '../../../components/iterate-paginated-grid/iterate-paginated-grid.component';
+
+
 
 @NgModule({
   imports: [
@@ -23,6 +27,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     TutorialesPageRoutingModule,
     NgxPaginationModule
   ],
-  declarations: [TutorialesPage]
+  declarations: [TutorialesPage, FooterAyudaHomeComponent, IteratePaginatedGridComponent]
 })
 export class TutorialesPageModule {}
