@@ -12,14 +12,69 @@
     </ion-toolbar>
   </ion-header>
   
-<ion-content>
-<body>
-  <h2>idTutorial</h2>
-  <form name="form" action="" method="get">
-      <input type="text" name="prod" id="prod">
-      <h2>nombre</h2>
-      <input type="text" name="shelf" id="shelf">
-  </form>
-  <button onclick="sub()">Prueba</button>
-</body>
+  <ion-content>
+    <h2>Añadir tutorial</h2>
+    <form (ngSubmit)="aniadir_tutorial()" #formTutorial="ngForm">
+        <p>
+
+            <mat-form-field>
+                <input matInput name="idTutorial" [(ngModel)]="tutorial.idTutorial"
+                    type="number"
+                    placeholder="idTutorial">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput name="tipo" [(ngModel)]="tutorial.tipo"
+                    type="text"
+                    placeholder="tipo">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput name="nombre" [(ngModel)]="tutorial.nombre"
+                    type="text"
+                    placeholder="nombre">
+            </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+              <input matInput name="recurso" [(ngModel)]="tutorial.recurso"
+                  type="text"
+                  placeholder="recurso">
+          </mat-form-field>
+      </p>
+        <p>
+            <button type="submit" mat-flat-button color="accent">Añadir tutorial</button>
+        </p>
+    </form>
+<!--
+    <form name="form" action="" method="get">
+      <ion-item lines="full">
+        <ion-label position="floating">idTutorial</ion-label>
+        <ion-input type="text" required name="idTutorial" id="idTutorial"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Tipo</ion-label>
+        <ion-input type="text" required name="tipo" id="tipo"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" required name="nombre" id="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Recurso</ion-label>
+        <ion-input type="text" required name="recurso" id="recurso"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="success" expand="block" onclick="aniadir_tutorial()">Añadir</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+    -->
 </ion-content>

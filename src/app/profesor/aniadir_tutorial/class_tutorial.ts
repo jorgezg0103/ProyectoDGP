@@ -5,5 +5,4 @@ export class Tutorial {
         public nombre: string,
         public recurso: Text,
     ) { }
-
 }

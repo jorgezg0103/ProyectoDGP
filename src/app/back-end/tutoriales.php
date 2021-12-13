@@ -113,6 +113,9 @@ switch ($opcion) {
   case '1':
     echo listaTutoriales();
     break;
+  case '2':
+    insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
+    breaK;  
 }
 
 ?>
