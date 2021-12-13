@@ -89,14 +89,6 @@ function listaTutoriales(){
     $salida = "";
     $result = mysqli_query($conn, $sql);
     $lectura = "";
-    /*if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
-        $salida = "\nLeido con exito";
-    }
-    else {
-        echo "Dentro else";
-        $salida = "Error al insertar";
-    }*/
 
     if (mysqli_num_rows($result) > 0) {
     $array = array();
