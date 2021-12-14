@@ -1,6 +1,10 @@
+//Nombre de archivo:agenda.page.ts
+//Fichero encargado de la funcionalidad de la agenda en la vista compleja
+//Autor: Laura Ortiz González, Jorge Zamudio Gutiérrez
+//Define el modulo de los principales componentes de la página web
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar';
-
 
 @Component({
   selector: 'app-agenda',
@@ -20,7 +24,7 @@ export class AgendaPage implements OnInit {
     {
       id: '2',
       nombre: 'Tomar comanda comedor',
-      fecha:'16-12-2021'
+      fecha:'20-12-2021'
     },
 
   ]
@@ -52,63 +56,35 @@ export class AgendaPage implements OnInit {
     this.viewTitle = title;
   }
 
-  createRandomEvents() {
-    var events = [];
-    for (var i = 0; i < 50; i++) {
-      var date = new Date();
-      var startDay = Math.floor(Math.random() * 90) - 45;
-      var endDay = Math.floor(Math.random() * 2) + startDay;
-      var startTime;
-      var endTime;
-
-      startTime = new Date(
-        Date.UTC(
-          date.getUTCFullYear(),
-          date.getUTCMonth(),
-          date.getUTCDate() + startDay
-        )
-      );
-      if (endDay === startDay) {
-        endDay += 1;
-      }
-      endTime = new Date(
-        Date.UTC(
-          date.getUTCFullYear(),
-          date.getUTCMonth(),
-          date.getUTCDate() + endDay
-        )
-      );
-      events.push({
-        title: 'Evento ' + i,
-        startTime: startTime,
-        endTime: endTime,
-        allDay: true,
-      });
-       
-    }
-    this.eventSource = events;
-  }
-
   introducirTareas(){
 
     var eventos=[];
+
     for(let tarea of this.tareas){
-      var startTime = new Date('15-12-2021');
-      var endTime = new Date('16-12-2021');
+      var arrayFecha = tarea.fecha.split('-');
+      var anio = parseInt(arrayFecha[2]);
+      var mes = parseInt(arrayFecha[1]) - 1;
+      var dia = parseInt(arrayFecha[0]);
+      var startTime = new Date(
+        Date.UTC(anio, mes, dia)
+      );
+      var endTime = new Date(
+        Date.UTC(anio, mes, dia+1)
+      );
       eventos.push({
-        title: tarea.nombre + tarea.id,
+        title: tarea.nombre,
         startTime: startTime,
         endTime: endTime,
         allDay: true,
       });
     }
+
     this.eventSource = eventos;
   }
 
   constructor() { }
 
   ngOnInit() {
-    //this.createRandomEvents();
     this.introducirTareas();
   }
 
