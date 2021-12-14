@@ -1,49 +1,20 @@
 <!--Nombre del archivo: tutoriales.page.html-->
-<!--Fichero para la creacion del apartado tutoriales de la vista Alumno Compleja-->
-<!--Autor: Jorge Zamudio Gutierrez-->
-<!--Define la estructura de la página de tutoriales-->
+<!--Fichero encargado de la creación de la página web para que el alumno pueda ver los distintos tutoriales-->
+<!--Autor: Laura Ortiz González, Jorge Zamudio Gutiérrez-->
+<!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al alumno los tutoriales-->
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Tutoriales Alumno</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Tutoriales Vista Alumno Compleja</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content>
-  <ion-grid>
-
-    <!-- Se insertan los tutoriales -->
-    <ion-row>
-      <ion-col size="4" *ngFor="let tutorial of tutoriales">
-          <ion-card>
-            <ion-card-title>{{tutorial.nombre}}</ion-card-title>
-            <ion-card-content>{{tutorial.descripcion}}</ion-card-content>
-          </ion-card>
-      </ion-col>
-    </ion-row>
-
+    <ion-content fullscreen>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
+    </ion-content>
     <!-- Fila con Ayuda y botón de Inicio -->
-    <ion-row>
-
-      <ion-col>
-        <ion-card>
-          <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
-          <ion-card-header>
-            <ion-card-title>Ayuda</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-      <ion-col>
-        <ion-card [routerLink]="['../home']">
-          <img src= "https://icon-library.com/images/home-icon-black/home-icon-black-3.jpg"/>
-          <ion-card-header>
-            <ion-card-title>Inicio</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid>
-</ion-content>
+    <footer-ayuda-home></footer-ayuda-home>
+  </ion-app>
+</body>

@@ -1,48 +1,20 @@
 <!--Nombre del archivo: agenda.page.html-->
 <!--Fichero encargado de la creación de la página web para que el alumno pueda ver los distintos tutoriales-->
-<!--Autor: Miguel Carracedo Rodríguez-->
+<!--Autor: Miguel Carracedo Rodríguez, Jorge Zamudio Gutiérrez, Laura Ortiz González-->
 <!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al alumno el menú que ha elegido ese día-->
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Agenda Alumno Basica</ion-title>
-  </ion-toolbar>
-</ion-header>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Agenda Vista Alumno Basica</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content>
-  <div id = "container">
-
-    <ion-grid>
-
-      <ion-row *ngFor="let tarea of tareas | paginate: { itemsPerPage: 2, currentPage: pagina_actual }" >
-
-        <ion-col>
-
-          <ion-card>
-
-            <ion-img [src]="tarea.imageURL"></ion-img>
-            <div class="nombreTarea">{{tarea.nombre}}</div>
-
-          </ion-card>
-
-        </ion-col>
-
-      </ion-row>
-
-      <footer-ayuda-home></footer-ayuda-home>
-
-      <!-- Aquí se pone el control del paginación -->
-      <div class="paginacion">
-        <pagination-controls
-          (pageChange)="pagina_actual = $event"
-          previousLabel=""
-          nextLabel=""
-          maxSize=""
-        ></pagination-controls>
-      </div>
-
-    </ion-grid>
-
-  </div>
-
-</ion-content>
+    <ion-content fullscreen>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
+    </ion-content>
+    <!-- Fila con Ayuda y botón de Inicio -->
+    <footer-ayuda-home></footer-ayuda-home>
+  </ion-app>
+</body>

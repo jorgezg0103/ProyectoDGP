@@ -1,4 +1,11 @@
+//Nombre de archivo:tutoriales.page.ts
+//Fichero encargado de dirigirel routing hacia la página principal o al fichero de estilo
+//Autor: Jorge Zamudio Gutiérrez, Laura Ortiz González
+//Define el modulo de los principales componentes de la página web
+
 import { Component, OnInit } from '@angular/core';
+import { PaginationSizeBasedService } from '../../../services/pagination-size-based.service'
+import {ImageUrlService} from '../../../services/image-url.service'
 
 @Component({
   selector: 'app-tutoriales',
@@ -7,57 +14,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorialesPage implements OnInit {
 
-  private tutoriales = [
+  tutorial1URL : string;
+  tutorial2URL : string;
+  tutorial3URL : string;
+  tutorial4URL : string;
+
+  private opcionesInputeadas;
+  private opciones = [
     {
       id: '1',
-      nombre: 'T1',
+      nombre: 'Tutorial1',
+      to:'',
       descripcion: 'Aqui va el tutorial 1',
+      imageURL:''
     },
     {
       id: '2',
-      nombre: 'T2',
+      nombre: 'Tutorial2',
+      to:'',
       descripcion: 'Aqui va el tutorial 2',
+      imageURL:''
     },
     {
       id: '3',
-      nombre: 'T3',
+      nombre: 'Tutorial3',
+      to:'',
       descripcion: 'Aqui va el tutorial 3',
+      imageURL:''
     },
     {
       id: '4',
-      nombre: 'T4',
+      nombre: 'Tutorial4',
+      to:'',
       descripcion: 'Aqui va el tutorial 4',
-    },
-    {
-      id: '5',
-      nombre: 'T5',
-      descripcion: 'Aqui va el tutorial 5',
-    },
-    {
-      id: '6',
-      nombre: 'T6',
-      descripcion: 'Aqui va el tutorial 6',
-    },
-    {
-      id: '7',
-      nombre: 'T7',
-      descripcion: 'Aqui va el tutorial 7',
-    },
-    {
-      id: '8',
-      nombre: 'T8',
-      descripcion: 'Aqui va el tutorial 8',
-    },
-    {
-      id: '9',
-      nombre: 'T9',
-      descripcion: 'Aqui va el tutorial 9',
+      imageURL:''
     }
   ]
 
-  constructor() { }
+  constructor(private urlService:ImageUrlService, private paginationManager:PaginationSizeBasedService) {
+    this.getUrls();
+    this.opcionesInputeadas=JSON.stringify(this.opciones);
+  }
 
   ngOnInit() {
+  }
+
+  getUrls(){
+    this.tutorial1URL=this.urlService.getUrl(35175,'true',this.urlService.naranja);
+    this.tutorial2URL=this.urlService.getUrl(35175,'true',this.urlService.naranja);
+    this.tutorial3URL=this.urlService.getUrl(35175,'true',this.urlService.naranja);
+    this.tutorial4URL=this.urlService.getUrl(35175,'true',this.urlService.naranja);
+  
+    this.opciones[0].imageURL=this.tutorial1URL;
+    this.opciones[1].imageURL=this.tutorial2URL;
+    this.opciones[2].imageURL=this.tutorial3URL;
+    this.opciones[3].imageURL=this.tutorial4URL;
   }
 
 }

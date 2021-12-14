@@ -50,10 +50,6 @@ const routes: Routes = [
     loadChildren: () => import('./alumno/vista_compleja/agenda/agenda.module').then( m => m.AgendaPageModule)
   },
   {
-    path: 'alumno/vista_basica/tutoriales',
-    loadChildren: () => import('./alumno/vista_basica/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
-  },
-  {
     path: 'alumno/vista_media/tutoriales',
     loadChildren: () => import('./alumno/vista_media/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
   },

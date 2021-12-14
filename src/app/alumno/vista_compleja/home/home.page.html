@@ -1,6 +1,6 @@
 <!--Nombre del archivo: home.page.html-->
 <!--Fichero para la creacion del apartado home de la vista Alumno Compleja-->
-<!--Autor: Jorge Zamudio Gutierrez -->
+<!--Autor: Jorge Zamudio Gutierrez, Laura Ortiz González -->
 <!--Define la estructura de la página de home-->
 
 <body>
@@ -14,76 +14,12 @@
     </ion-header>
 
     <ion-content fullscreen>
-    
-      <div id="container">
-        <ion-grid>
-
-          <!-- Fila con menu y tutoriales  -->
-          <ion-row>
-
-            <ion-col>
-                <ion-card [routerLink]="['../menu']">
-                  <img src="https://image.flaticon.com/icons/png/512/857/857681.png" />
-                  <ion-card-header>
-                    <ion-card-title>Menú</ion-card-title>
-                  </ion-card-header>
-                </ion-card>
-            </ion-col>
-
-            <ion-col>
-              <ion-card [routerLink]="['../tutoriales']">
-                <img src="https://library.kissclipart.com/20181007/jtw/kissclipart-webinars-icon-png-clipart-computer-icons-web-confe-680ac42975b629d6.png" />
-                <ion-card-header>
-                  <ion-card-title>Tutorial</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-
-          </ion-row>
-          
-          <!-- Fila con agenda  -->
-          <ion-row>
-            
-            <!--<ion-col></ion-col>-->
-    
-            <ion-col>
-    
-              <ion-card [routerLink]="['../agenda']">
-                <img src="https://thumbs.dreamstime.com/b/agenda-icon-vector-isolated-white-background-agenda-sign-agenda-icon-vector-isolated-white-background-agenda-transparent-125392198.jpg"/>
-                <ion-card-header>
-                  <ion-card-title>Agenda</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-    
-            </ion-col>
-    
-            <!--<ion-col></ion-col>-->
-    
-          </ion-row>
-    
-          <!-- Fila con Ayuda  -->
-          <ion-row size>
-            
-            <ion-col>
-              <ion-card>
-                <img src= "https://cdn.icon-icons.com/icons2/602/PNG/512/Help_icon-icons.com_55891.png"/>
-                <ion-card-header>
-                  <ion-card-title>Ayuda</ion-card-title>
-                </ion-card-header>
-              </ion-card>
-            </ion-col>
-    
-            <ion-col></ion-col>    
-          </ion-row>
- 
-    
-        </ion-grid>
-      </div>
+      <iterate-paginated-grid opciones={{opcionesInputeadas}}></iterate-paginated-grid>
     </ion-content>
-
+    <!-- Fila con Ayuda y botón de Inicio -->
+    <footer-ayuda-home></footer-ayuda-home>
   </ion-app>
 </body>
-
 
 
 
