@@ -115,10 +115,11 @@ switch ($opcion) {
     echo listaTutoriales();
     break;
   case '2':
-    $idTutorial = $_POST["idTutorial"];
-    $tipo = utf8_decode($_POST["tipo"]);
-    $nombre = utf8_decode($_POST["nombre"]);
-    $recurso = utf8_decode($_POST["recurso"]);
+    $idTutorial = $_GET["idTutorial"];
+    $tipo = utf8_decode($_GET["tipo"]);
+    $nombre = utf8_decode($_GET["nombre"]);
+    $recurso = utf8_decode($_GET["recurso"]);
+    echo "ID: ". $idTutorial. " TIPO: ". $tipo;
     insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
     break;  
 }

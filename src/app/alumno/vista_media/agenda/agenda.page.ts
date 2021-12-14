@@ -1,5 +1,5 @@
-//Nombre de archivo:home.page.ts
-//Fichero encargado de dirigir el routing hacia la página principal o al fichero de estilo
+//Nombre de archivo:agenda.page.ts
+//Fichero encargado de la funcionalidad de la agenda en la vista compleja
 //Autor: Laura Ortiz González, Jorge Zamudio Gutiérrez
 //Define el modulo de los principales componentes de la página web
 
