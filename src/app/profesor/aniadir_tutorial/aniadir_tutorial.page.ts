@@ -11,6 +11,7 @@ import { Tutorial } from './class_tutorial';
 export class Aniadir_tutorialPage implements OnInit {
   
   tutorial = new Tutorial(undefined,"","",undefined);
+  tutoriales;
 
   constructor(public navCtrl: NavController, private http:HttpClient) {   
   }
@@ -19,7 +20,11 @@ export class Aniadir_tutorialPage implements OnInit {
   }
 
   public aniadir_tutorial(){
-    this.http.post("http://localhost/tutoriales.php?opcion=2", this.tutorial);  
+    this.http.get("http://localhost/tutoriales.php?opcion=2&idTutorial="+this.tutorial.idTutorial+
+    "$tipo"+ this.tutorial.tipo+"$nombre="+this.tutorial.nombre+"$recurso="+this.tutorial.recurso).subscribe(snap => {
+      console.log(snap);
+      this.tutoriales = snap;
+    });
   }
 
 }
