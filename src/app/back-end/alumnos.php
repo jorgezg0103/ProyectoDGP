@@ -95,6 +95,7 @@ function tareasAsignadas($usuario){
         $sql2 = "SELECT * FROM tarea WHERE idTarea='$tarea'";
         $result2 = mysqli_query($conn, $sql2);
         $row2 = mysqli_fetch_assoc($result2);
+        $row2["fecha"] = $row["fecha"];
 
         $array[] = array_map('utf8_encode', $row2);
       }

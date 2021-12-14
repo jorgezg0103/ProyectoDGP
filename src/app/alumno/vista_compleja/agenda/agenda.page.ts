@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar';
 
+import { NavController } from '@ionic/angular';
+import { HttpClient } from "@angular/common/http";
+
+//import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-agenda',
@@ -11,7 +16,11 @@ export class AgendaPage implements OnInit {
 
   pagina_actual: number = 1;
 
-  private tareas = [
+  usuario = "ElJorges";
+
+  tareas;
+
+  /*private tareas = [
     {
       id: '1',
       nombre: 'Poner el microondas',
@@ -23,7 +32,7 @@ export class AgendaPage implements OnInit {
       fecha:'16-12-2021'
     },
 
-  ]
+  ]*/
 
   // Lista de eventos
   eventSource = [];
@@ -52,7 +61,7 @@ export class AgendaPage implements OnInit {
     this.viewTitle = title;
   }
 
-  createRandomEvents() {
+  /*createRandomEvents() {
     var events = [];
     for (var i = 0; i < 50; i++) {
       var date = new Date();
@@ -87,29 +96,59 @@ export class AgendaPage implements OnInit {
        
     }
     this.eventSource = events;
-  }
+  }*/
 
   introducirTareas(){
 
     var eventos=[];
     for(let tarea of this.tareas){
-      var startTime = new Date('15-12-2021');
-      var endTime = new Date('16-12-2021');
+      //var startTime = new Date('15-12-2021');
+      var year_str = tarea.fecha.substr(0,4);
+      //console.log(year_str);
+      var month_str = tarea.fecha.substr(5,2);
+      //console.log(month_str);
+      var day_str = tarea.fecha.substr(8,2);
+      //console.log(day_str);
+
+      var startTime = new Date(
+        Date.UTC(
+          parseInt(year_str, 10),
+          parseInt(month_str, 10)-1,
+          parseInt(day_str, 10)
+        )
+      );
+      //var endTime = new Date('16-12-2021');
+      var endTime = new Date(
+        Date.UTC(
+          parseInt(year_str, 10),
+          parseInt(month_str, 10)-1,
+          parseInt(day_str, 10)+1
+        )
+      );
       eventos.push({
-        title: tarea.nombre + tarea.id,
+        title: tarea.descripcion,
         startTime: startTime,
         endTime: endTime,
         allDay: true,
       });
+
     }
     this.eventSource = eventos;
   }
 
-  constructor() { }
+  constructor(public navCtrl: NavController, private http:HttpClient) {
+    this.http.get("http://localhost/alumnos.php?opcion=2&usuario="+this.usuario).subscribe(snap => {
+      console.log(snap);
+      this.tareas = snap;
+      this.introducirTareas();
+    });
+
+    
+  }
 
   ngOnInit() {
     //this.createRandomEvents();
-    this.introducirTareas();
+    //this.introducirTareas();
   }
 
 }
