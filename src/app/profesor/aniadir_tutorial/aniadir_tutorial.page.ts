@@ -20,8 +20,7 @@ export class Aniadir_tutorialPage implements OnInit {
   }
 
   public aniadir_tutorial(){
-    this.http.get("http://localhost/tutoriales.php?opcion=2&idTutorial="+this.tutorial.idTutorial+
-    "$tipo"+ this.tutorial.tipo+"$nombre="+this.tutorial.nombre+"$recurso="+this.tutorial.recurso).subscribe(snap => {
+    this.http.get("http://localhost/tutoriales.php?opcion=2&idTutorial="+this.tutorial.idTutorial+"&tipo="+this.tutorial.tipo+"&nombre="+this.tutorial.nombre+"&recurso="+this.tutorial.recurso).subscribe(snap => {
       console.log(snap);
       this.tutoriales = snap;
     });

@@ -9,16 +9,25 @@ Header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 require 'connection.php';
 function insertarTutorial($idTutorial, $tipo, $nombre, $recurso){
+    //echo "recursos " . $recurso;
+    //echo "INSERT INTO tutoriales VALUES ($idTutorial, '$tipo', '$nombre', '$recurso')";
     $conn = createConnection();
-    $sql = "INSERT INTO tutoriales
-    VALUES ($idTutorial, '$tipo', '$nombre', '$recurso')";
-    
+    $sql = "INSERT INTO tutoriales VALUES ($idTutorial, '$tipo', '$recurso', '$nombre')";
+    $mensaje = "";
+
     if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
+      $mensaje = "New record created successfully";
+      //echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
       //mysqli_commit($conn);
     } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }  
+      $mensaje = "Error: " . $sql . "<br>" . mysqli_error($conn);
+      echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
+      //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }  /**/
+
+    return $mensaje;
 }
 
 function modificarTutorial(){
@@ -119,7 +128,9 @@ switch ($opcion) {
     $tipo = utf8_decode($_GET["tipo"]);
     $nombre = utf8_decode($_GET["nombre"]);
     $recurso = utf8_decode($_GET["recurso"]);
-    echo "ID: ". $idTutorial. " TIPO: ". $tipo;
+    //echo "ID: ". $idTutorial. " TIPO: ". $tipo;
+    //echo "nombre " . $nombre;
+    //echo "recurso " . $recurso;
     insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
     break;  
 }
