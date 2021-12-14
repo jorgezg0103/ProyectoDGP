@@ -6,15 +6,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar';
 
-<<<<<<< HEAD
 import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
 
 //import { ActivatedRoute } from '@angular/router';
 
 
-=======
->>>>>>> 7da3cd36b6831ce6397558098b59823cc43cf4fb
 @Component({
   selector: 'app-agenda',
   templateUrl: './agenda.page.html',
@@ -37,7 +34,7 @@ export class AgendaPage implements OnInit {
     {
       id: '2',
       nombre: 'Tomar comanda comedor',
-      fecha:'20-12-2021'
+      fecha:'16-12-2021'
     },
 
   ]*/
@@ -69,7 +66,6 @@ export class AgendaPage implements OnInit {
     this.viewTitle = title;
   }
 
-<<<<<<< HEAD
   /*createRandomEvents() {
     var events = [];
     for (var i = 0; i < 50; i++) {
@@ -107,14 +103,10 @@ export class AgendaPage implements OnInit {
     this.eventSource = events;
   }*/
 
-=======
->>>>>>> 7da3cd36b6831ce6397558098b59823cc43cf4fb
   introducirTareas(){
 
     var eventos=[];
-
     for(let tarea of this.tareas){
-<<<<<<< HEAD
       //var startTime = new Date('15-12-2021');
       var year_str = tarea.fecha.substr(0,4);
       //console.log(year_str);
@@ -140,27 +132,12 @@ export class AgendaPage implements OnInit {
       );
       eventos.push({
         title: tarea.descripcion,
-=======
-      var arrayFecha = tarea.fecha.split('-');
-      var anio = parseInt(arrayFecha[2]);
-      var mes = parseInt(arrayFecha[1]) - 1;
-      var dia = parseInt(arrayFecha[0]);
-      var startTime = new Date(
-        Date.UTC(anio, mes, dia)
-      );
-      var endTime = new Date(
-        Date.UTC(anio, mes, dia+1)
-      );
-      eventos.push({
-        title: tarea.nombre,
->>>>>>> 7da3cd36b6831ce6397558098b59823cc43cf4fb
         startTime: startTime,
         endTime: endTime,
         allDay: true,
       });
 
     }
-
     this.eventSource = eventos;
   }
 
@@ -175,12 +152,8 @@ export class AgendaPage implements OnInit {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
     //this.createRandomEvents();
     //this.introducirTareas();
-=======
-    this.introducirTareas();
->>>>>>> 7da3cd36b6831ce6397558098b59823cc43cf4fb
   }
 
 }
