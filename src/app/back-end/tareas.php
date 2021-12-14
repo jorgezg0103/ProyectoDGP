@@ -9,10 +9,10 @@ Header('Access-Control-Allow-Origin: *');
 require 'connection.php';
 function insertarTarea($idTarea, $descripcion){
     $conn = createConnection();
-    $sql = "INSERT INTO tarea VALUES ($idTarea, $descripcion)";
+    $sql = "INSERT INTO tarea VALUES ($idTarea, '$descripcion')";
     
     if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
+      //echo "New record created successfully";
       mysqli_commit($conn);
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -54,10 +54,10 @@ function leerTarea($idTarea){
 
 function asignarTarea($idTarea, $idResponsable, $fecha){
     $conn = createConnection();
-    $sql = "INSERT INTO responsable VALUES ($idResponsable, $idTarea, $fecha)";
+    $sql = "INSERT INTO responsable VALUES ('$idResponsable', $idTarea, '$fecha')";
     
     if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
+      //echo "New record created successfully";
       mysqli_commit($conn);
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -94,6 +94,19 @@ $opcion = $_GET["opcion"];
 switch ($opcion) {
   case '1':
     echo listaTareas();
+    break;
+  case '2':
+    $idTarea = $_GET["idTarea"];
+    $descripcion = utf8_decode($_GET["descripcion"]);
+
+    insertarTarea($idTarea, $descripcion);
+    break;
+  case '3':
+    $idTarea = $_GET["idTarea"];
+    $usuario = utf8_decode($_GET["usuario"]);
+    $fecha = utf8_decode($_GET["fecha"]);
+
+    asignarTarea($idTarea, $usuario, $fecha);
     break;
 }
 

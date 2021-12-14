@@ -116,6 +116,11 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
 
+  {
+    path: 'profesor/asignar_tarea',
+    loadChildren: () => import('./profesor/asignar_tarea/asignar_tarea.module').then( m => m.Asignar_tareaPageModule)
+  },
+
 ];
 
 @NgModule({

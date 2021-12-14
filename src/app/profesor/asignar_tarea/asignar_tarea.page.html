@@ -1,0 +1,53 @@
+<!--Nombre del archivo: asignar_tarea.page.html-->
+<!--Fichero encargado de la creación de la página web para asignar una tarea a un alumno-->
+<!--Autor: Jose Melguizo Ruano-->
+<!--Se va a definir el formulario para asignar tareas-->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Asignar tarea</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <h2>Asignar tarea</h2>
+    <form #formTarea="ngForm">
+        <p>
+            <ion-item>
+                <input name="idTarea" [(ngModel)]="tarea.idTarea"
+                    type="number"
+                    placeholder="idTarea">
+            </ion-item>
+        </p>
+
+        <p>
+          <ion-item>
+              <input name="descripcion" [(ngModel)]="tarea.descripcion"
+                  type="text"
+                  placeholder="descripcion">
+          </ion-item>
+        </p>
+        <p>
+          <ion-item>
+              <input name="usuario" [(ngModel)]="tarea.usuario"
+                  type="text"
+                  placeholder="usuario">
+          </ion-item>
+        </p>
+        <p>
+          <ion-item>
+              <input name="fecha" [(ngModel)]="tarea.fecha"
+                  type="text"
+                  placeholder="fecha">
+          </ion-item>
+        </p>
+
+        <p>
+          <ion-button type="submit" color="success" expand="block" (click)="aniadir_tarea()">Asignar</ion-button>        
+        </p>
+    </form>
+
+</ion-content>
