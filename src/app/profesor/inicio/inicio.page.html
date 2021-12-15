@@ -3,126 +3,6 @@
 <!--Autor: Alejandro Soriano Morante-->
 <!--Se va a definir las diferentes cards de ionic que ejecutarán las funcionalidades deseadas por parte de la página web del incio y registro por parte profesor-->
 
-<!--<ion-header>
-    <ion-toolbar>
-      <ion-title>Inicio de Sesión de Profesor</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <div id="container">
-      <ion-grid>
-        
-        <ion-row>
-
-          <ion-col>
-            <ion-card class="ion-text-center">
-              <ion-card-header>
-                <ion-card-title>Identifiquese</ion-card-title>
-              </ion-card-header>
-  
-            </ion-card>
-
-          </ion-col>
-
-        </ion-row>
-
-
-        <ion-row>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>Correo</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-
-        </ion-row>
-
-        <ion-row>
-          <ion-card>
-            <div class ="item item-input-inset">
-              <label class="item-input-wrapper">
-                <input type="text" placeholder="Email">
-              </label>
-            </div>
-          </ion-card>
-        </ion-row>
-
-  
-        <ion-row>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Contraseña</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-
-      </ion-row>
-
-      <ion-row>
-        <ion-card>
-          <div class ="item item-input-inset">
-            <label class="item-input-wrapper">
-              <input type="text" placeholder="Contraseña">
-            </label>
-          </div>
-        </ion-card>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-card [routerLink]="['../home']">
-            <ion-card-header>
-              <ion-card-title>Iniciar sesion</ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-
-
-        <ion-row>
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>Recuperar Contraseña</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-        </ion-row>
-
-
-         
-        <ion-row>
-
-          <ion-col>
-            <ion-card class="ion-text-center">
-              <ion-card-header>
-                <ion-card-title>No tengo cuenta</ion-card-title>
-              </ion-card-header>
-  
-            </ion-card>
-
-          </ion-col>
-
-        </ion-row>
-
-         
-        <ion-row>
-
-          <ion-col>
-            <ion-card class="ion-text-center">
-              <ion-card-header>
-                <ion-card-title>Registrarme</ion-card-title>
-              </ion-card-header>
-  
-            </ion-card>
-
-          </ion-col>
-
-        </ion-row>
-
-
-      </ion-grid>
-    </div>
-  </ion-content>
-
--->
 
 <ion-header>
   <ion-toolbar>
@@ -135,20 +15,18 @@
 
 <ion-content>
   <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
+    <ion-row ion-item *ngFor="let item of listadoP">
+      <ion-col>
+            <ion-card-header>
+              <ion-button type="submit" color="Gold" expand="block" [routerLink]="['../home']">{{item.nombre}} {{item.apellidos}}</ion-button>
+            </ion-card-header>
+      </ion-col>
+    </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="success" expand="block" [routerLink]="['../home']">Iniciar Sesión</ion-button>
-        <a [routerLink]="['../register']" class="small-text">Registrarse</a>
+        
+        <ion-button type="submit" color="primary" expand="block" [routerLink]="['../register']">Regístrese si no aparece</ion-button>
       </ion-col>
     </ion-row>
 

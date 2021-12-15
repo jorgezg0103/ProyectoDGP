@@ -1,38 +1,80 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title>Registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <form>
-      <ion-item lines="full">
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text" required></ion-input>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir Profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formProfesor="ngForm">
+      <p>
+          <ion-item>
+              <input name="Usuario" [(ngModel)]="profesor.usuario"
+                  type="text"
+                  placeholder="usuario">
+          </ion-item>
+      </p>
+      <p>
+          <ion-item>
+              <input name="DNI" [(ngModel)]="profesor.dni"
+                  type="text"
+                  placeholder="dni">
+          </ion-item>
+      </p>
+      <p>
+          <ion-item>
+              <input name="Nombre" [(ngModel)]="profesor.nombre"
+                  type="text"
+                  placeholder="nombre">
+          </ion-item>
+      </p>
+      <p>
+        <ion-item>
+            <input name="Apellidos" [(ngModel)]="profesor.apellidos"
+                type="text"
+                placeholder="apellidos">
+        </ion-item>
+    </p>
+    <p>
+      <ion-item>
+          <input name="Email" [(ngModel)]="profesor.email"
+              type="text"
+              placeholder="email">
       </ion-item>
-  
-      <ion-item lines="full">
-        <ion-label position="floating">Apellidos</ion-label>
-        <ion-input type="text" required></ion-input>
-      </ion-item>
-  
-      <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="text" required></ion-input>
-      </ion-item>
-  
-      <ion-item lines="full">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" required></ion-input>
-      </ion-item>
-  
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="danger" expand="block" [routerLink]="['../home']">Registrarse</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-content>
+  </p>
+      <p>
+        <ion-button type="submit" color="success" expand="block" (click)="aniadir_profesor()">Registrarse</ion-button>        
+      </p>
+  </form>
+<!--
+  <form name="form" action="" method="get">
+    <ion-item lines="full">
+      <ion-label position="floating">idTutorial</ion-label>
+      <ion-input type="text" required name="idTutorial" id="idTutorial"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Tipo</ion-label>
+      <ion-input type="text" required name="tipo" id="tipo"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" required name="nombre" id="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Recurso</ion-label>
+      <ion-input type="text" required name="recurso" id="recurso"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block" onclick="aniadir_tutorial()">Añadir</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  -->
+</ion-content>
