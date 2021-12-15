@@ -9,7 +9,12 @@
   
   <ion-content class="auth-form">
     <ion-grid>
-
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="['../inicio']" expand="block" color="danger">Inicio Sesión</ion-button>
+        </ion-col>
+      </ion-row>
+      
       <ion-row>
         <ion-col align-self-center>
           <ion-button [routerLink]="['../register']" expand="block" color="primary">Registrarse</ion-button>
@@ -17,10 +22,6 @@
 
       </ion-row>
 
-      <ion-row>
-        <ion-col>
-          <ion-button [routerLink]="['../inicio']" expand="block" color="danger">Inicio Sesión</ion-button>
-        </ion-col>
-      </ion-row>
+      
     </ion-grid>
   </ion-content>

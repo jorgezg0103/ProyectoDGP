@@ -103,6 +103,11 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/aniadir_tutorial/aniadir_tutorial.module').then( m => m.Aniadir_tutorialPageModule)
   },
   {
+    path: 'profesor/eliminar_tutorial',
+    loadChildren: () => import('./profesor/eliminar_tutorial/eliminar_tutorial.module').then( m => m.Eliminar_tutorialPageModule)
+  },
+
+  {
     path: 'profesor/alumnos',
     loadChildren: () => import('./profesor/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
@@ -119,6 +124,10 @@ const routes: Routes = [
   {
     path: 'profesor/asignar_tarea',
     loadChildren: () => import('./profesor/asignar_tarea/asignar_tarea.module').then( m => m.Asignar_tareaPageModule)
+  },
+  {
+    path: 'asignar-tutorial',
+    loadChildren: () => import('./profesor/asignar-tutorial/asignar-tutorial.module').then( m => m.AsignarTutorialPageModule)
   },
 
 ];

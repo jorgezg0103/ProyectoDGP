@@ -1,7 +1,7 @@
 <?php
 //Nombre del archivo: comandas.php
 //Fichero encargado de la gestión del almacenamiento de las comandas
-//Autor: Jesús López Rodríguez-->
+//Autor: Jesús López Rodríguez
 //Se definen las funciones necesarias en php
 
 Header('Access-Control-Allow-Origin: *');

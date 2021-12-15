@@ -77,7 +77,6 @@ function listaTareas(){
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         $array[] = array_map('utf8_encode', $row);
-        //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
     }
     $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
@@ -87,6 +86,20 @@ function listaTareas(){
     closeConnection($conn);
     echo $salida;
     return $lectura;
+}
+
+function asignarTutorial($idTarea, $idTutorial){
+    $conn = createConnection();
+    $sql = "INSERT INTO explica VALUES ($idTarea, $idTutorial)";
+    
+    if (mysqli_query($conn, $sql)) {
+      //echo "New record created successfully";
+      mysqli_commit($conn);
+    } else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }  
+    closeConnection($conn);
+
 }
 
 $opcion = $_GET["opcion"];
@@ -105,8 +118,12 @@ switch ($opcion) {
     $idTarea = $_GET["idTarea"];
     $usuario = utf8_decode($_GET["usuario"]);
     $fecha = utf8_decode($_GET["fecha"]);
-
     asignarTarea($idTarea, $usuario, $fecha);
+    break;
+  case '4':
+    $idTarea = $_GET["idTarea"];
+    $idTutorial = $_GET["idTutorial"];
+    asignarTutorial($idTarea, $idTutorial);
     break;
 }
 

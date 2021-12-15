@@ -34,8 +34,25 @@ function modificarTutorial(){
 
 }
 
-function eliminarTutorial(){
-echo "aaaaaaaaaaaaaaaaaaaa";
+function eliminarTutorial($idTutorial){
+    
+    $conn = createConnection();
+    $sql = "DELETE FROM tutoriales WHERE idTutorial='".$idTutorial."'";
+    $mensaje = "";
+
+    if (mysqli_query($conn, $sql)) {
+      $mensaje = "New record created successfully";
+      //echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
+      //mysqli_commit($conn);
+    } else {
+      $mensaje = "Error: " . $sql . "<br>" . mysqli_error($conn);
+      echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
+      //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }  /**/
+
+    return $mensaje;
 }
 
 function leerTutorial($idTutorial){
@@ -68,32 +85,7 @@ function leerTutorial($idTutorial){
 }
 
 function listaTutoriales(){
-   /* $conn = createConnection();
-    $sql = "SELECT * FROM tutoriales";
-    $salida = "";
-    $result = mysqli_query($conn, $sql);
-    $lectura = "";
-    if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
-        $salida = "\nLeido con exito";
-    }
-    else {
-        echo "Dentro else";
-        $salida = "Error al insertar";
-    }
 
-    if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-            $lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"];
-        }
-    } else {
-    echo "0 results";
-    }
-
-    closeConnection($conn);
-    echo $salida;
-    return $lectura;*/
     $conn = createConnection();
     $sql = "SELECT * FROM tutoriales";
     $salida = "";
@@ -132,7 +124,14 @@ switch ($opcion) {
     //echo "nombre " . $nombre;
     //echo "recurso " . $recurso;
     insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
-    break;  
+    break;
+
+   case '3':
+    $idTutorial = $_GET["idTutorial"];
+    //echo "ID: ". $idTutorial. " TIPO: ". $tipo;
+    //echo "nombre " . $nombre;
+    //echo "recurso " . $recurso;
+    eliminarTutorial($idTutorial);
 }
 
 ?>
