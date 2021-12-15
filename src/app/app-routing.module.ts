@@ -125,6 +125,10 @@ const routes: Routes = [
     path: 'profesor/asignar_tarea',
     loadChildren: () => import('./profesor/asignar_tarea/asignar_tarea.module').then( m => m.Asignar_tareaPageModule)
   },
+  {
+    path: 'asignar-tutorial',
+    loadChildren: () => import('./profesor/asignar-tutorial/asignar-tutorial.module').then( m => m.AsignarTutorialPageModule)
+  },
 
 ];
 
