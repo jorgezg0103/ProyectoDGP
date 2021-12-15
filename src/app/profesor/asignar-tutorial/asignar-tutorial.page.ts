@@ -17,7 +17,7 @@ export class AsignarTutorialPage implements OnInit {
   ngOnInit() {
   }
 
-  public aniadir_tutorial(){
+  public asignar_tutorial(){
     this.http.get("http://localhost/tareas.php?opcion=4&idTarea="+this.explica.idTarea+"&idTutorial="+this.explica.idTutorial).subscribe(snap => {
       console.log(snap);
     });
