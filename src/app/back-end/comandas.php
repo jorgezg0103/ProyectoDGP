@@ -51,25 +51,29 @@ function leerPrimerPlato($idPlato){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idPrimero"]. " - Name: " . $row["nombre"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // echo $salida;
     return $lectura;
 }
 
@@ -126,25 +130,29 @@ function leerSegundoPlato($idPlato){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idSegundo"]. " - Name: " . $row["nombre"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
-    echo "0 results";
+    // echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // echo $salida;
     return $lectura;
 }
 
@@ -194,25 +202,29 @@ function leerPostre($idPlato){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idPostre"]. " - Name: " . $row["nombre"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // echo $salida;
     return $lectura;
 
 }
@@ -316,6 +328,18 @@ switch ($opcion) {
     break;
   case '4':
     echo listaComanda();
+    break;
+  case '5':
+    $primero=$_GET["idprimero"];
+    echo leerPrimerPlato($primero);
+    break;
+  case '6':
+    $segundo=$_GET["idsegundo"];
+    echo leerSegundoPlato($segundo);
+    break;
+  case '7':
+    $postre=$_GET["idpostre"];
+    echo leerPostre($postre);
     break;
 }
 
