@@ -4,8 +4,14 @@
 //Define el estilo de los distintos contenidos de la página web
 
 .paginacion{
-  bottom: 28%;
+  bottom: 15%;
+  margin: 25%;
 }
+
+.paginacion::ng-deep .ngx-pagination {
+  padding-left: 0% !important;
+}
+
 #container {
     text-align: center;
 
