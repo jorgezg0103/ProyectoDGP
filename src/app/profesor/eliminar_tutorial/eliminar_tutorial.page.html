@@ -1,0 +1,59 @@
+<!--Nombre del archivo: alumnos.page.html-->
+<!--Fichero encargado de la creación de la página web para que el profesor pueda ver todos los alumnos-->
+<!--Autor: Alejandro Soriano Morante-->
+<!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al profesor sus alumnos-->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Lista tutoriales</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <h2>Eliminar tutorial</h2>
+    <form #formEliminarTutorial="ngForm">
+        <p>
+            <ion-item>
+                <input name="idTutorial" [(ngModel)]="tutorial.idTutorial"
+                    type="number"
+                    placeholder="idTutorial">
+            </ion-item>
+        </p>
+        
+        <p>
+          <ion-button type="submit" color="success" expand="block" (click)="eliminar_tutorial()">Eliminar</ion-button>        
+        </p>
+    </form>
+<!--
+    <form name="form" action="" method="get">
+      <ion-item lines="full">
+        <ion-label position="floating">idTutorial</ion-label>
+        <ion-input type="text" required name="idTutorial" id="idTutorial"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Tipo</ion-label>
+        <ion-input type="text" required name="tipo" id="tipo"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" required name="nombre" id="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Recurso</ion-label>
+        <ion-input type="text" required name="recurso" id="recurso"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="success" expand="block" onclick="aniadir_tutorial()">Añadir</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+    -->
+</ion-content>

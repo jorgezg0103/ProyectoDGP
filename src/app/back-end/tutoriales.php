@@ -34,8 +34,25 @@ function modificarTutorial(){
 
 }
 
-function eliminarTutorial(){
-echo "aaaaaaaaaaaaaaaaaaaa";
+function eliminarTutorial($idTutorial){
+    
+    $conn = createConnection();
+    $sql = "DELETE FROM tutoriales WHERE idTutorial='".$idTutorial."'";
+    $mensaje = "";
+
+    if (mysqli_query($conn, $sql)) {
+      $mensaje = "New record created successfully";
+      //echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
+      //mysqli_commit($conn);
+    } else {
+      $mensaje = "Error: " . $sql . "<br>" . mysqli_error($conn);
+      echo $mensaje;
+      $mensaje = json_encode($mensaje, JSON_NUMERIC_CHECK);
+      //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }  /**/
+
+    return $mensaje;
 }
 
 function leerTutorial($idTutorial){
@@ -132,7 +149,14 @@ switch ($opcion) {
     //echo "nombre " . $nombre;
     //echo "recurso " . $recurso;
     insertarTutorial($idTutorial, $tipo, $nombre, $recurso);
-    break;  
+    break;
+
+   case '3':
+    $idTutorial = $_GET["idTutorial"];
+    //echo "ID: ". $idTutorial. " TIPO: ". $tipo;
+    //echo "nombre " . $nombre;
+    //echo "recurso " . $recurso;
+    eliminarTutorial($idTutorial);
 }
 
 ?>
