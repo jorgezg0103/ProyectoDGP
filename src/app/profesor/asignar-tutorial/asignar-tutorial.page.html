@@ -1,9 +1,39 @@
+<!--Nombre del archivo: asignar_tutorial.page.html-->
+<!--Fichero encargado de la creación de la página web para asignar un tutorial a una tarea-->
+<!--Autor: Jesús López Rodríguez-->
+<!--Se va a definir el formulario para asignar tareas-->
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>asignar_tutorial</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Asignar Tutorial</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2>Asignar tutorial</h2>
+  <form #formTutorial="ngForm">
+      <p>
+          <ion-item>
+              <input name="idTarea" [(ngModel)]="explica.idTarea"
+                  type="number"
+                  placeholder="idTarea">
+          </ion-item>
+      </p>
+
+      <p>
+        <ion-item>
+            <input name="idTutorial" [(ngModel)]="explica.idTutorial"
+                type="number"
+                placeholder="idTutorial">
+        </ion-item>
+      </p>
+
+      <p>
+        <ion-button type="submit" color="success" expand="block" (click)="aniadir_tutorial()">Asignar</ion-button>        
+      </p>
+  </form>
 
 </ion-content>
