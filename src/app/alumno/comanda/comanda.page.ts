@@ -29,14 +29,14 @@ export class ComandaPage implements OnInit {
           {
             id:lista.idComanda,
             nombre:lista.usuario,
-            fotoalumno:'',
+            fotoalumno:'https://cdn0.iconfinder.com/data/icons/flowers-and-leaves/47/flower_9-512.png',
             primero:lista.primero,
             segundo:lista.segundo,
             postre:lista.postre
           };
         this.comandasTomadas.push(opcion);
       }
-      this.getFotoAlumno();
+      // console.log(this.comandasTomadas);
       this.cargarImagenes();
     });
 
@@ -47,16 +47,6 @@ export class ComandaPage implements OnInit {
 
   }
 
-  getFotoAlumno(){
-    for(let comanda of this.comandasTomadas){
-      let usuario=comanda.nombre;
-      this.http.get("http://localhost/alumnos.php?opcion=3&usuario="+usuario).subscribe(snap => {
-        this.listado=snap;
-        comanda.fotoalumno=snap[0].imagen;
-        console.log("Foto: "+this.listado);
-      });
-    }
-  }
   cargarImagenes(){
     for(let comanda of this.comandasTomadas){
       // console.log(comanda.nombre);

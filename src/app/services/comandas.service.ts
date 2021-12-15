@@ -22,14 +22,14 @@ export class ComandasService {
           {
             id:lista.idComanda,
             nombre:lista.usuario,
-            fotoalumno:'',
+            fotoalumno:'https://cdn0.iconfinder.com/data/icons/flowers-and-leaves/47/flower_9-512.png',
             primero:lista.primero,
             segundo:lista.segundo,
             postre:lista.postre
           };
         this.comandasTomadas.push(opcion);
       }
-      
+
       this.getUrls();
     });
 
