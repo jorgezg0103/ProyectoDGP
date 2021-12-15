@@ -11,8 +11,18 @@
       <ion-title>Lista tutoriales</ion-title>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content>
+  <ion-content [fullscreen]="true" class="ion-padding">
+  <ion-row ion-item *ngFor="let item of listadoT">
+    <ion-col>
+      <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ item.idTutorial }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>{{ item.nombre }}</ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
     <h2>Eliminar tutorial</h2>
     <form #formEliminarTutorial="ngForm">
         <p>
@@ -24,7 +34,7 @@
         </p>
         
         <p>
-          <ion-button type="submit" color="success" expand="block" (click)="eliminar_tutorial()">Eliminar</ion-button>        
+          <ion-button type="submit" color="success" expand="block" (click)="eliminar_tutorial()">Eliminar</ion-button>      
         </p>
     </form>
 <!--

@@ -11,14 +11,19 @@ import { Tutorial } from './class_tutorial';
 export class Eliminar_tutorialPage implements OnInit {
   tutorial = new Tutorial(undefined);
   tutoriales;
+  listadoT;
 
-  constructor(public navCtrl: NavController, private http:HttpClient) {   
+  constructor(public navCtrl: NavController, private http:HttpClient) {  
+    this.http.get("http://localhost/tutoriales.php?opcion=1").subscribe(snap => {
+      console.log(snap);
+      this.listadoT = snap;
+    }); 
   }
 
   ngOnInit() {
   }
 
-  public eliminar(){
+  public eliminar_tutorial(){
     this.http.get("http://localhost/tutoriales.php?opcion=3&idTutorial="+this.tutorial.idTutorial).subscribe(snap => {
       console.log(snap);
       this.tutoriales = snap;
