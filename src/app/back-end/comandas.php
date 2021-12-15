@@ -4,7 +4,7 @@
 //Autor: Jesús López Rodríguez-->
 //Se definen las funciones necesarias en php
 
-
+Header('Access-Control-Allow-Origin: *');
 require 'connection.php';
 
 function insertarPrimerPlato(){
@@ -18,25 +18,29 @@ function listaPrimerPlato(){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idPrimero"]. " - Name: " . $row["nombre"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // echo $salida;
     return $lectura;
 }
 
@@ -69,8 +73,17 @@ function leerPrimerPlato($idPlato){
     return $lectura;
 }
 
-function insertarSegundoPlato(){
-
+function insertarSegundoPlato($nombre,$idImagen){
+  // $conn = createConnection();
+  // $sql = "INSERT INTO segundoPlato VALUES ('$id', '$nombre')";
+  //
+  // if (mysqli_query($conn, $sql)) {
+  //   //echo "New record created successfully";
+  //   mysqli_commit($conn);
+  // } else {
+  //   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  // }
+  // closeConnection($conn);
 }
 
 function listaSegundoPlato(){
@@ -80,25 +93,29 @@ function listaSegundoPlato(){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idSegundo"]. " - Name: " . $row["nombre"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // echo $salida;
     return $lectura;
 }
 
@@ -142,25 +159,30 @@ function listaPostre(){
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        //echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        //echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
     // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idPostre"]. " - Name: " . $row["nombre"];
-    }
+      $array = array();
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result)) {
+          $array[] = array_map('utf8_encode', $row);
+          //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+      }
+      $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
-    echo "0 results";
+    //echo "0 results";
     }
 
     closeConnection($conn);
-    echo $salida;
+    // $lectura = json_encode($lectura, JSON_NUMERIC_CHECK);
+    //echo $salida;
     return $lectura;
 
 }
@@ -192,50 +214,54 @@ function leerPostre($idPlato){
     closeConnection($conn);
     echo $salida;
     return $lectura;
-    
+
 }
 
-function insertarComanda($conn, $primero, $segundo, $postre, $alumno){
-    //$conn = createConnection();
-    $sql = "INSERT INTO comanda (primero, segundo, postre, usuario)
-    VALUES ($primero, $segundo, $postre, '$alumno')";
-    
+function insertarComanda($primero, $segundo, $postre, $alumno){
+    $conn = createConnection();
+    $sql = "INSERT INTO comanda (usuario,primero, segundo, postre)
+    VALUES ('$alumno',$primero, $segundo, $postre)";
+
     if (mysqli_query($conn, $sql)) {
       echo "New record created successfully";
       mysqli_commit($conn);
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }  
-    //closeConnection($conn);
-    
+    }
+    closeConnection($conn);
+
 }
 
-function listaComanda($conn){
-    //$conn = createConnection();
+function listaComanda(){
+    $conn = createConnection();
     $sql = "SELECT * FROM comanda";
     $salida = "";
     $result = mysqli_query($conn, $sql);
     $lectura = "";
     if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
+        // echo "\nDentro if";
         $salida = "\nLeido con exito";
     }
     else {
-        echo "Dentro else";
+        // echo "Dentro else";
         $salida = "Error al insertar";
     }
 
     if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        $lectura = $lectura. "\nID: " . $row["idComanda"]. " - Primero: " . $row["primero"]. " - Segundo: " . $row["segundo"]. " - Postre: " . $row["postre"]. " - Usuario: " . $row["usuario"];
-    }
+      // output data of each row
+        $array = array();
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+            $array[] = array_map('utf8_encode', $row);
+            //$lectura = $lectura. "\nUser: " . $row["usuario"]. " - Name: " . $row["nombre"]. " " . $row["apellidos"]. " Discapacidad: ". $row["discapacidad"];
+        }
+        $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
 
-    //closeConnection($conn);
-    echo $salida;
+    closeConnection($conn);
+    // echo $salida;
     return $lectura;
 }
 
@@ -266,6 +292,31 @@ function leerComanda($conn,$idComanda){
     //closeConnection($conn);
     echo $salida;
     return $lectura;
+}
+
+$opcion = $_GET["opcion"];
+
+switch ($opcion) {
+  case '0':
+    $primero = $_GET["primero"];
+    $segundo = $_GET["segundo"];
+    $postre = $_GET["postre"];
+    $alumno = utf8_decode($_GET["alumno"]);
+
+    insertarComanda($primero,$segundo,$postre,$alumno);
+    break;
+  case '1':
+    echo listaPrimerPlato();
+  break;
+  case '2':
+    echo listaSegundoPlato();
+  break;
+  case '3':
+    echo listaPostre();
+    break;
+  case '4':
+    echo listaComanda();
+    break;
 }
 
 ?>

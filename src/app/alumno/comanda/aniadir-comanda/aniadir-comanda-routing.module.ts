@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'postre',
     loadChildren: () => import('../aniadirComanda/postre/postre.module').then( m => m.PostrePageModule)
+  },
+  {
+    path: 'alumnos',
+    loadChildren: () => import('../aniadirComanda/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   }
 ];
 
