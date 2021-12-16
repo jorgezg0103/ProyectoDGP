@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ImageUrlService {
-  naranja='ff9800';
+  naranja='ffffff';
   morado='FDA1FF';
   blanco='ffffff';
   constructor() { }

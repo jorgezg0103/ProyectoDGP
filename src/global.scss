@@ -27,7 +27,15 @@
 
 ion-content {
     --overflow: hidden;
-    
+    --ion-background-color:#69b9b0;
+}
+
+ion-toolbar{
+    --background:#f4a261;
+}
+
+ion-card{
+    --ion-background-color:#ffffff;
 }
 
 .paginacion{
