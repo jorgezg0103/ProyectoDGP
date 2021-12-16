@@ -27,22 +27,9 @@ export class AgendaPage implements OnInit {
   pagina_actual: number = 1;
 
   usuario = "ElJorges";
+  nombreUsuario = "Jorge";
 
   tareas;
-
-  /*private tareas = [
-    {
-      id: '1',
-      nombre: 'Poner el microondas',
-      fecha:'15-12-2021'
-    },
-    {
-      id: '2',
-      nombre: 'Tomar comanda comedor',
-      fecha:'16-12-2021'
-    },
-
-  ]*/
 
   // Lista de eventos
   eventSource = [];
@@ -73,10 +60,16 @@ export class AgendaPage implements OnInit {
 
   // Funcion que se activa cuando se selecciona un evento determinado
   onEventSelected = (event) => {
-    this.nombreServicio.setNombre(event.title);
-    this.router.navigate(["../lista_tutoriales"], {relativeTo:this.route});
 
-};
+    if(event.title == "Tomar comanda comedor"){
+      this.router.navigate(["../../comanda"], {relativeTo:this.route});
+    }
+    else{
+      this.nombreServicio.setNombre(event.title);
+      this.router.navigate(["../lista_tutoriales"], {relativeTo:this.route});
+    }
+
+  };
 
   introducirTareas(){
 

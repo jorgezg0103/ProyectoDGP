@@ -13,6 +13,9 @@ import { Lista_tutorialesPageRoutingModule } from './lista_tutoriales-routing.mo
 
 import { Lista_tutorialesPage } from './lista_tutoriales.page';
 
+import { FooterAyudaHomeComponent } from '../../../components/footer-ayuda-home/footer-ayuda-home.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +23,6 @@ import { Lista_tutorialesPage } from './lista_tutoriales.page';
     IonicModule,
     Lista_tutorialesPageRoutingModule
   ],
-  declarations: [Lista_tutorialesPage]
+  declarations: [Lista_tutorialesPage, FooterAyudaHomeComponent]
 })
 export class Lista_tutorialesPageModule {}
