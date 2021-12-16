@@ -55,26 +55,47 @@ function eliminarTutorial($idTutorial){
     return $mensaje;
 }
 
+function selectTutorial($tituloTutorial){
+
+  $conn = createConnection();
+    $sql = "SELECT * FROM tutoriales WHERE nombre='".$tituloTutorial."'";
+    $salida = "";
+    $result = mysqli_query($conn, $sql);
+    $lectura = "";
+
+    if (mysqli_num_rows($result) > 0) {
+    $array = array();
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        $array[] = array_map('utf8_encode', $row);
+        //$lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"]. " Descripcion: ". $row["recurso"];
+    }
+    $lectura = json_encode($array, JSON_NUMERIC_CHECK);
+    } else {
+    echo "0 results";
+    }
+
+    closeConnection($conn);
+    echo $lectura;
+    return $lectura;
+
+}
+
 function leerTutorial($idTutorial){
     $conn = createConnection();
     $sql = "SELECT * FROM tutoriales WHERE idTutorial='".$idTutorial."'";
     $salida = "";
     $result = mysqli_query($conn, $sql);
     $lectura = "";
-    if (mysqli_query($conn, $sql)){
-        echo "\nDentro if";
-        $salida = "\nLeido con exito";
-    }
-    else {
-        echo "Dentro else";
-        $salida = "Error al insertar";
-    }
 
     if (mysqli_num_rows($result) > 0) {
+    $array = array();
     // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-            $lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"]. " Descripcion: ". $row["recurso"];
-        }
+    while($row = mysqli_fetch_assoc($result)) {
+        $array[] = array_map('utf8_encode', $row);
+        //$lectura = $lectura. "\nID: " . $row["idTutorial"]. " - Tipo: " . $row["tipo"]. " Nombre: ". $row["nombre"]. " Descripcion: ". $row["recurso"];
+    }
+    $lectura = json_encode($array, JSON_NUMERIC_CHECK);
     } else {
     echo "0 results";
     }
@@ -132,6 +153,10 @@ switch ($opcion) {
     //echo "nombre " . $nombre;
     //echo "recurso " . $recurso;
     eliminarTutorial($idTutorial);
+    break;
+    case '4':
+      $tituloTutorial = utf8_decode($_GET["nombre"]);
+      selectTutorial($tituloTutorial);
 }
 
 ?>

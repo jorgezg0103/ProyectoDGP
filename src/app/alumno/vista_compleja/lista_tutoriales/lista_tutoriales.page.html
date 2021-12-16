@@ -1,0 +1,36 @@
+<!--Nombre del archivo: alumnos.page.html-->
+<!--Fichero encargado de la creación de la página web para que el profesor pueda ver todos los alumnos-->
+<!--Autor: Alejandro Soriano Morante-->
+<!--Se va a definir las diferentes cards de ionic que nos permitirán mostrar al profesor sus alumnos-->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Explicacion tutorial</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content>
+  <ion-grid>
+
+
+    <ion-row ion-item *ngFor="let item of listadoT">
+      <ion-col>
+        <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{ item.nombre }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>{{ item.recurso }}</ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    
+
+  </ion-grid>
+
+
+</ion-content>

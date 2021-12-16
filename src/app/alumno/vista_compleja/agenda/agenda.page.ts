@@ -9,6 +9,11 @@ import { CalendarComponent } from 'ionic2-calendar';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
 
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { ObtenerNombreService } from 'src/app/services/obtener-nombre.service';
+
+
 //import { ActivatedRoute } from '@angular/router';
 
 
@@ -66,42 +71,12 @@ export class AgendaPage implements OnInit {
     this.viewTitle = title;
   }
 
-  /*createRandomEvents() {
-    var events = [];
-    for (var i = 0; i < 50; i++) {
-      var date = new Date();
-      var startDay = Math.floor(Math.random() * 90) - 45;
-      var endDay = Math.floor(Math.random() * 2) + startDay;
-      var startTime;
-      var endTime;
+  // Funcion que se activa cuando se selecciona un evento determinado
+  onEventSelected = (event) => {
+    this.nombreServicio.setNombre(event.title);
+    this.router.navigate(["../lista_tutoriales"], {relativeTo:this.route});
 
-      startTime = new Date(
-        Date.UTC(
-          date.getUTCFullYear(),
-          date.getUTCMonth(),
-          date.getUTCDate() + startDay
-        )
-      );
-      if (endDay === startDay) {
-        endDay += 1;
-      }
-      endTime = new Date(
-        Date.UTC(
-          date.getUTCFullYear(),
-          date.getUTCMonth(),
-          date.getUTCDate() + endDay
-        )
-      );
-      events.push({
-        title: 'Evento ' + i,
-        startTime: startTime,
-        endTime: endTime,
-        allDay: true,
-      });
-       
-    }
-    this.eventSource = events;
-  }*/
+};
 
   introducirTareas(){
 
@@ -141,7 +116,8 @@ export class AgendaPage implements OnInit {
     this.eventSource = eventos;
   }
 
-  constructor(public navCtrl: NavController, private http:HttpClient) {
+  constructor(public navCtrl: NavController, private http:HttpClient, 
+    private router:Router, private route:ActivatedRoute, private nombreServicio:ObtenerNombreService) {
     this.http.get("http://localhost/alumnos.php?opcion=2&usuario="+this.usuario).subscribe(snap => {
       console.log(snap);
       this.tareas = snap;

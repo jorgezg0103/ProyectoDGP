@@ -38,11 +38,12 @@
   [calendarMode]="calendar.mode"
   [currentDate]="calendar.currentDate"
   (onTitleChanged)="onViewTitleChanged($event)"
-  noEventsLabel="Sin tareass"
+  noEventsLabel="Sin tareas"
   allDayLabel="Tarea"
   startingDayMonth="1"
   formatDayHeader="EEEEEE"
   formatDay="d"
+  (onEventSelected)="onEventSelected($event)"
   >
   </calendar>
 
