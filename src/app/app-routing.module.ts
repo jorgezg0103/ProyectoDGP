@@ -38,6 +38,10 @@ const routes: Routes = [
     loadChildren: () => import('./alumno/vista_compleja/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
+    path: 'alumno/vista_compleja/lista_tutoriales',
+    loadChildren: () => import('./alumno/vista_compleja/lista_tutoriales/lista_tutoriales.module').then( m => m.Lista_tutorialesPageModule)
+  },
+  {
     path: 'alumno/vista_basica/agenda',
     loadChildren: () => import('./alumno/vista_basica/agenda/agenda.module').then( m => m.AgendaPageModule)
   },
