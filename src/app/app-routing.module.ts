@@ -134,7 +134,7 @@ const routes: Routes = [
     loadChildren: () => import('./profesor/asignar-tutorial/asignar-tutorial.module').then( m => m.AsignarTutorialPageModule)
   },
   {
-    path: 'ver-comandas',
+    path: 'profesor/ver-comandas',
     loadChildren: () => import('./profesor/ver-comandas/ver-comandas.module').then( m => m.VerComandasPageModule)
   },
 
