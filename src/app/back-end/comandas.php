@@ -305,6 +305,30 @@ function leerComanda($conn,$idComanda){
     echo $salida;
     return $lectura;
 }
+function leerPrimeros($id){
+  $conn = createConnection();
+  $sql = "SELECT * FROM comanda WHERE primero='".$id."'";
+  $salida = "";
+  $result = mysqli_query($conn, $sql);
+  $count=mysqli_num_rows($result);
+  return $count;
+}
+function leerSegundos($id){
+  $conn = createConnection();
+  $sql = "SELECT * FROM comanda WHERE segundo='".$id."'";
+  $salida = "";
+  $result = mysqli_query($conn, $sql);
+  $count=mysqli_num_rows($result);
+  return $count;
+}
+function leerPostres($id){
+  $conn = createConnection();
+  $sql = "SELECT * FROM comanda WHERE postre='".$id."'";
+  $salida = "";
+  $result = mysqli_query($conn, $sql);
+  $count=mysqli_num_rows($result);
+  return $count;
+}
 
 $opcion = $_GET["opcion"];
 
@@ -341,6 +365,18 @@ switch ($opcion) {
     $postre=$_GET["idpostre"];
     echo leerPostre($postre);
     break;
+  case '8':
+    $id=$_GET["id"];
+    echo leerPrimeros($id);
+  break;
+  case '9':
+    $id=$_GET["id"];
+    echo leerSegundos($id);
+  break;
+  case '10':
+    $id=$_GET["id"];
+    echo leerPostres($id);
+  break;
 }
 
 ?>

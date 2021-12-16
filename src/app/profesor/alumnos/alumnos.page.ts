@@ -17,12 +17,12 @@ export class AlumnosPage implements OnInit {
   listado;
 
   constructor(public navCtrl: NavController, private http:HttpClient) {
-    
+
     this.http.get("http://localhost/alumnos.php?opcion=1").subscribe(snap => {
       console.log(snap);
       this.listado = snap;
     });
-    
+
   }
 
   ngOnInit() {

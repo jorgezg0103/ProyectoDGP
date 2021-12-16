@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ver-comandas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row ion-item *ngFor="let item of countPrimerosList">
+      <ion-col>
+        <p>{{item.id}}: {{item.num}}</p>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <ion-row ion-item *ngFor="let item of countSegundosList">
+      <ion-col>
+        <p>{{item.id}}: {{item.num}}</p>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <ion-row ion-item *ngFor="let item of countPostresList">
+      <ion-col>
+        <p>{{item.id}}: {{item.num}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
